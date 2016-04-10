@@ -1,0 +1,58 @@
+﻿<div ng-include="'app/shared/navigation.html'"></div>
+
+
+<div class="container">
+
+    <div class="jumbotron">
+        <div class="alert alert-success alert-dismissible" ng-show="vm.success">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <strong>Success!</strong> Indicates a successful or positive action.
+        </div>
+
+        <div class="alert alert-info alert-dismissible" ng-show="vm.inProgress">
+            <strong>Info!</strong> Working...
+        </div>
+
+        <div class="alert alert-danger alert-dismissible" ng-show="vm.error">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <strong>Danger!</strong> Indicates a dangerous or potentially negative action.
+        </div>
+
+        <form data-ng-submit="vm.sendForm()">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Name</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Foodname" ng-model="vm.foodItem.Name">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Calories</label>
+                <input type="number" class="form-control" id="exampleInputEmail1" placeholder="Calories" ng-model="vm.foodItem.Calories">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+        <br/>
+        <br/>
+        <table class="table">
+            <tr>
+                <th><a href="" data-ng-click="predicate = 'Name'; reverse=!reverse">Name</a></th>
+                <th><a href="" data-ng-click="predicate = 'Calories'; reverse=!reverse">Calories</a></th>
+                <th class="text-right">Actions</th>
+            </tr>
+            <tr data-ng-repeat="food in vm.allFoods | orderBy:predicate:reverse track by $index">
+                <td class="text-left">
+                    {{food.Name}}
+                </td>
+                <td class="text-left">
+                    {{food.Calories}}
+                </td>
+                <td class="text-right">
+                    <button data-ng-click="vm.deleteFood(food)" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-trash"></span> Delete</button>
+                    <button data-ng-click="vm.setFoodItemForEdit(food)" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-edit"></span> Edit</button>
+                    <a href="#/food/{{food.Id}}" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-search"></span> Details</a>
+                </td>
+            </tr>
+        </table>
+
+
+    </div>
+</div>
+<!-- /.container -->

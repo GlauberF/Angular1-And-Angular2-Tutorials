@@ -1,0 +1,17 @@
+[
+    {
+        "Id": 1,
+        "Name": "Lasagne",
+        "Calories": 123
+    },
+    {
+        "Id": 1,
+        "Name": "Chips",
+        "Calories": 123
+    },
+    {
+        "Id": 1,
+        "Name": "Bratwurst",
+        "Calories": 123
+    }
+]

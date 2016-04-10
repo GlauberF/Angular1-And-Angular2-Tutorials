@@ -1,0 +1,17 @@
+Angular1-Tutorial/*/*/libs
+Angular1-Tutorial/*/end/node_modules/
+Angular1-Tutorial/*/start/node_modules/
+Angular2-Tutorial/*/*/node_modules
+ASPNET-Demo-FoodAPI-Angular1-Angular2-Clients/Angular1-Client/libs
+ASPNET-Demo-FoodAPI-Angular1-Angular2-Clients/Angular1-Client/node_modules
+ASPNET-Demo-FoodAPI-Angular1-Angular2-Clients/Angular2-Client/node_modules
+ASPNET-Demo-FoodAPI-Angular1-Angular2-Clients/Angular2-Client/app/components/*/*.js
+ASPNET-Demo-FoodAPI-Angular1-Angular2-Clients/Angular2-Client/app/components/*/*.js.map
+ASPNET-Demo-FoodAPI-Angular1-Angular2-Clients/Server/packages
+ASPNET-Demo-FoodAPI-Angular1-Angular2-Clients/Server/FoodAPI/obj
+ASPNET-Demo-FoodAPI-Angular1-Angular2-Clients/Server/FoodAPI/bin
+ASPNET-Demo-FoodAPI-Angular1-Angular2-Clients/Angular2-Client/typings
+Angular2-Tutorial/01_Components/end/app/myFirstComponent/myfirst.component.js
+Angular2-Tutorial/01_Components/end/app/myFirstComponent/myfirst.component.js.map
+ASPNET-Demo-FoodAPI-Angular1-Angular2-Clients/Server/FoodAPI/Properties/PublishProfiles
+ASPNET-Demo-FoodAPI-Angular1-Angular2-Clients/Server/.vs

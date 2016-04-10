@@ -1,0 +1,17 @@
+<h2>Two-Way</h2>
+
+<input type="text" [(ngModel)]="twoWayProperty" /> <br/>
+
+<span>You typed: "{{twoWayProperty}}"</span>
+
+<br/>
+
+<h2>From Component to Template</h2>
+
+<span>"{{fromComponentToTemplate}}"</span>
+
+<br/>
+
+<h2>From Template to Component</h2>
+
+<button (click)="buttonClicked($event)">Click me</button>

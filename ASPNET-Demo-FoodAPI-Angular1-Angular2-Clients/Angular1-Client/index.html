@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link href="libs/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="libs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/custom.css">
+
+    <title>Angular Js Demo Application</title>
+
+    <!-- Custom styles for this template -->
+    <!--<link href="starter-template.css" rel="stylesheet">-->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body data-ng-app="AngularJsDemoApp">
+
+    <div data-ng-view></div>
+
+    <script src="libs/angular/angular.js"></script>
+    <script src="libs/angular-animate/angular-animate.js"></script>
+    <script src="libs/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="libs/angular-loading-bar/build/loading-bar.js"></script>
+    <script src="libs/angular-resource/angular-resource.js"></script>
+    <script src="libs/angular-route/angular-route.js"></script>
+    <script src="libs/angular-toastr/dist/angular-toastr.tpls.js"></script>
+    <script src="libs/jquery/dist/jquery.js"></script>
+    <script src="libs/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="libs/lodash/lodash.js"></script>
+
+	
+    <script src="app/application.js"></script>
+    <script src="app/food/foodModule.js"></script>
+    <script src="app/home/homeModule.js"></script>
+    <script src="app/food/Controllers/foodController.js"></script>
+    <script src="app/food/Controllers/foodDetailsController.js"></script>
+    <script src="app/home/Controllers/homeController.js"></script>
+    <script src="app/services/foodServices.js"></script>
+
+</body>
+
+</html>
