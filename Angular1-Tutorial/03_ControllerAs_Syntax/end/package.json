@@ -1,14 +1,14 @@
 {
-  "name": "angular-demo",
-  "version": "1.0.0",
-  "scripts": {
-    "start": "concurrently \"npm run lite\" ",
-    "lite": "lite-server"
-  },
-  "license": "ISC",
-  "dependencies": { },
-  "devDependencies": {
-    "concurrently": "^2.0.0",
-    "lite-server": "^2.1.0"
-  }
+    "name": "angular-demo",
+    "version": "1.0.0",
+    "scripts": {
+        "start": "concurrently \"bower install\" \"npm run lite\" ",
+        "lite": "lite-server"
+    },
+    "license": "ISC",
+    "dependencies": {},
+    "devDependencies": {
+        "concurrently": "^2.0.0",
+        "lite-server": "^2.1.0"
+    }
 }

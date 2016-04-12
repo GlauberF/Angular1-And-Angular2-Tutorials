@@ -15,10 +15,12 @@
         $scope.add = function(a, b) {
             return a + b;
         }
-        
-        $scope.foodItem = { calories:500 }
-        
-        $scope.foodItems = ["Burger", "Pommes", "Nudeln"]
+
+        $scope.foodItem = { calories: 500 }
+
+        $scope.foodItems = ["Burger", "Pommes", "Nudeln"];
+
+        $scope.dateForFilter = new Date();
     }
 
     angular

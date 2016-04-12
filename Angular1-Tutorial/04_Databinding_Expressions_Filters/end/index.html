@@ -34,22 +34,27 @@
 </head>
 
 <body data-ng-app="AngularJsDemoApp">
+    <div class="container">
+        <div data-ng-controller="homeController">
+            <input ng-model="value" />
+            <h3>{{value}}</h3>
+            <br/>
+            <br/>
+            <input type="button" ng-click="clickMe()" value="alert me" />
+            <br/>
+            <br/>
+            <h3 ng-bind="1+1"></h3>
+            <h3 ng-bind="add(1,2)"></h3>
 
-    <div data-ng-controller="homeController">
-        <input ng-model="value"/>
-        <h3>{{value}}</h3>
-        <br/>
-        <br/>
-        <input type="button" ng-click="clickMe()" value="alert me"/>
-        <br/>
-        <br/>
-        <h3 ng-bind="1+1"></h3>
-        <h3 ng-bind="add(1,2)"></h3>
-        
-        <h3 ng-bind="foodItem.calories"></h3>
-        <h3 ng-bind="foodItems[1]"></h3>
+            <h3 ng-bind="foodItem.calories"></h3>
+            <h3 ng-bind="foodItems[1]"></h3>
+            <h3 ng-bind="dateForFilter | date"></h3>
+            <h3 ng-bind="dateForFilter | date:'medium'"></h3>
+            <h3 ng-bind="dateForFilter | date:'MMM d, y h:mm:ss a'"></h3>
+            
+            <h3 ng-bind="foodItems | limitTo:2"></h3>
+        </div>
     </div>
-
     <script src="libs/angular/angular.js"></script>
 
     <script src="app/application.js"></script>
