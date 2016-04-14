@@ -68,16 +68,45 @@
                 <h3>ngRepeat</h3>
                 <ul>
                     <li ng-repeat="item in vm.foodItems track by $index">
-                        item: {{item}} 
-                        i: {{$index}} 
-                        first: {{$first}} 
-                        last:{{$last}} 
-                        middle:{{$middle}} 
-                        even:{{$even}} 
-                        odd:{{$odd}}
+                        item: {{item}} i: {{$index}} first: {{$first}} last:{{$last}} middle:{{$middle}} even:{{$even}} odd:{{$odd}}
                     </li>
                 </ul>
             </p>
+            <hr/>
+            <p>
+                <h3>Simple Directive</h3>
+                <my-Directive></my-Directive>
+            </p>
+            <hr/>
+            <div ng-controller="secondController as vm">
+                <p>
+                    <h3>Simple Directive - Same Scope</h3>
+                    <my-Second-Directive></my-Second-Directive>
+                </p>
+            </div>
+
+            <hr/>
+            <div ng-controller="secondController as vm">
+                <p>
+                    <h3>Isolated Scope</h3>
+                    <isolated-Scope-Directive text="vm.text"></isolated-Scope-Directive>
+                    <isolated-Scope-Directive text="vm.text2"></isolated-Scope-Directive>
+                </p>
+            </div>
+            <hr/>
+            <div ng-controller="secondController as vm">
+                <p>
+                    <h3>Isolated Scope With Link</h3>
+                    <isolated-Scope-Directive-With-Link text="vm.text"></isolated-Scope-Directive-With-Link>
+                </p>
+            </div> 
+            <hr/>
+            <div ng-controller="secondController as vm">
+                <p>
+                    <h3>Isolated Scope With Controller</h3>
+                    <isolated-Scope-Directive-With-Controller></isolated-Scope-Directive-With-Controller>
+                </p>
+            </div>
         </div>
 
     </div>
