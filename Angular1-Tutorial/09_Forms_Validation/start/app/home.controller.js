@@ -6,7 +6,6 @@
         var vm = this;   
         
         vm.value="My First angular application";
-        
     }
 
      angular
