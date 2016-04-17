@@ -1,4 +1,4 @@
-﻿(function() {
+﻿(function () {
     "use strict";
     angular
         .module("food.foodModule")
@@ -11,15 +11,15 @@
         var vm = this;
         vm.foodItem = {};
 
-        var sendForm = function() {
+        var sendForm = function () {
             addOrUpdateFood(vm.foodItem);
         }
 
-        var setFoodItemForEdit = function(foodItem) {
+        var setFoodItemForEdit = function (foodItem) {
             vm.foodItem = foodItem;
         }
 
-        var handleError = function(response) {
+        var handleError = function (response) {
             var errors = "";
 
             if (response.data && response.data.ModelState) {
@@ -32,7 +32,7 @@
             console.log(errors);
         }
 
-        var addOrUpdateFood = function(newFood) {
+        var addOrUpdateFood = function (newFood) {
 
             vm.inProgress = true;
             vm.success = false;
@@ -40,62 +40,62 @@
 
             if (newFood.Id) {
                 foodService.updateFood(newFood)
-                    .then(function() {
+                    .then(function () {
                         vm.foodItem = {};
                         getFood();
                         vm.success = true;
                     },
-                    function(response) {
+                    function (response) {
                         vm.error = true;
                         handleError(response);
-                    }).then(function() {
+                    }).then(function () {
                         vm.inProgress = false;
                     });
             } else {
                 foodService.addFood(newFood)
-                    .then(function() {
+                    .then(function () {
                         vm.foodItem = {};
                         getFood();
                         vm.success = true;
                     },
-                    function(response) {
+                    function (response) {
                         //Error
                         vm.error = true;
                         handleError(response);
-                    }).then(function() {
+                    }).then(function () {
                         vm.inProgress = false;
                     });
             }
         };
 
-        var deleteFood = function(foodToDelete) {
+        var deleteFood = function (foodToDelete) {
             vm.inProgress = true;
             vm.success = false;
             vm.error = false;
             foodService.deleteFood(foodToDelete)
-                .then(function(response) {
+                .then(function (response) {
                     console.log("Success");
                     getFood();
                     vm.success = true;
                 },
-                function(response) {
+                function (response) {
                     vm.error = true;
                     console.log("Error");
-                }).then(function() {
+                }).then(function () {
                     vm.inProgress = false;
                 });
         };
 
-        var getFood = function() {
+        var getFood = function () {
             vm.inProgress = true;
             foodService.getAllFood().then(
-                function(response) {
+                function (response) {
                     vm.allFoods = response.data;
                 },
-                function(response) {
+                function (response) {
                     //Error
                     console.log(response);
-                }).then(function() {
+                }).finally(function () {
                     vm.inProgress = false;
                 });
         };
