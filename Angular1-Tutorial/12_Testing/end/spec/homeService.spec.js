@@ -9,6 +9,20 @@ describe('homeServiceTests', function () {
         $httpBackend = _$httpBackend_;
     }));
 
+    it('should exist', inject(function (homeService) {
+        expect(homeService).toBeDefined();
+    }));
+
+    it('should implementent a auth function', inject(function (homeService) {
+        expect(homeService.getData).toBeDefined();
+    }));
+
+    it('should call $http.get in get', inject(function (homeService, $http) {
+        spyOn($http, 'get');
+        homeService.getData();
+        expect($http.get).toHaveBeenCalled();
+    }));
+
     it('values from service should be correct', function () {
         var responseData;
 
@@ -19,7 +33,7 @@ describe('homeServiceTests', function () {
         });
 
         $httpBackend.flush();
-        dump(responseData);
+        
         expect(responseData).toEqual([]);
     });
 });

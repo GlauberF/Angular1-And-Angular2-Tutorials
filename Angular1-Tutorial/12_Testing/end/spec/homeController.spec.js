@@ -12,10 +12,10 @@ describe('homeControllerTests', function () {
         expect(controller).toBeDefined();
         expect(controller.value).toEqual('My First angular application');
     });
-    
-     it('add should add correctly', function () {
+
+    it('add should add correctly', function () {
         var controller = $controller('homeController');
         expect(controller).toBeDefined();
-        expect(controller.add(1,2)).toEqual(3);
+        expect(controller.add(1, 2)).toEqual(3);
     });
 });
