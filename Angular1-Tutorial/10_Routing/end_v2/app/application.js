@@ -1,6 +1,14 @@
-﻿(function() {
+﻿(function () {
 
     "use strict";
 
-    angular.module("AngularJsDemoApp", []);
+    var app = angular.module("AngularJsDemoApp",
+        [
+            'ngRoute',
+
+            'homeModule',
+            'aboutModule',
+            'detailsModule'
+        ]);
+
 } ());

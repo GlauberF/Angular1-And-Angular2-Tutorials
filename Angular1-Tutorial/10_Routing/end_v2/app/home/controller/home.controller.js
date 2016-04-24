@@ -1,14 +1,14 @@
-(function() {
+(function () {
 
     "use strict";
 
-    function homeController() {    
-        var vm = this;   
+    function homeController() {
+        var vm = this;
         vm.value = "This is my first app";
     }
 
-     angular
-        .module("AngularJsDemoApp")
+    angular
+        .module("homeModule")
         .controller("homeController", homeController);
 
 } ());

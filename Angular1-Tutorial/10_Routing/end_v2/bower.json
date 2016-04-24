@@ -1,5 +1,5 @@
 {
-  "name": "AngularJsDemoApp",
+  "name": "anuglarjsdemoapp",
   "description": "AngularJs Demo application with IIFEs, angularJs, Gulp, Bower, etc...",
   "version": "0.0.1",
   "authors": [
@@ -8,8 +8,8 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "angular": "~1.4.4",
-    "bootstrap": "~3.3.5"
-  },
-  "devDependencies": {}
+    "angular": "~1.5.5",
+    "bootstrap": "~3.3.5",
+    "angular-route": "^1.5.5"
+  }
 }
