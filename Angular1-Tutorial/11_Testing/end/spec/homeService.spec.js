@@ -13,7 +13,7 @@ describe('homeServiceTests', function () {
         expect(homeService).toBeDefined();
     }));
 
-    it('should implementent a auth function', inject(function (homeService) {
+    it('should implementent a getData function', inject(function (homeService) {
         expect(homeService.getData).toBeDefined();
     }));
 

@@ -19,3 +19,23 @@ describe('homeControllerTests', function () {
         expect(controller.add(1, 2)).toEqual(3);
     });
 });
+
+describe('homeControllerWithScopeTests', function () {
+    beforeEach(angular.mock.module('AngularJsDemoApp'));
+    var $scope;
+
+    beforeEach(inject(function ($rootScope, $controller) {
+        $scope = $rootScope.$new();
+        $controller('homeControllerWithScope', { $scope: $scope });
+    }));
+
+    it('value should be correct', function () {
+        expect($scope).toBeDefined();
+        expect($scope.value).toEqual('My First angular application');
+    });
+
+    it('add should add correctly', function () {
+        expect($scope).toBeDefined();
+        expect($scope.add(1, 2)).toEqual(3);
+    });
+});

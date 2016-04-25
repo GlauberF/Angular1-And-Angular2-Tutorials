@@ -12,8 +12,20 @@
         }
     }
 
+    function homeControllerWithScope($scope) {
+
+        $scope.value = "My First angular application";
+
+        $scope.add = function (x, y) {
+            return x + y;
+        }
+    }
+
+    angular
+        .module("AngularJsDemoApp")
+        .controller("homeControllerWithScope", homeControllerWithScope);
+
     angular
         .module("AngularJsDemoApp")
         .controller("homeController", homeController);
-
 } ());
