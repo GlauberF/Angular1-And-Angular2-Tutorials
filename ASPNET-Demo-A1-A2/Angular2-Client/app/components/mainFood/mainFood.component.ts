@@ -3,6 +3,7 @@ import { CORE_DIRECTIVES } from 'angular2/common';
 import { RouteConfig, ROUTER_DIRECTIVES } from 'angular2/router';
 import { FoodFormComponent } from '../foodForm/foodForm.component';
 import { FoodListComponent } from '../foodList/foodList.component';
+import { FoodDetailsComponent } from '../foodDetails/foodDetails.component';
 import { FoodDataService } from '../../shared/food.dataservice';
 import { FoodItem } from '../../models/foodItem';
 
@@ -12,7 +13,6 @@ import { FoodItem } from '../../models/foodItem';
     directives: [ROUTER_DIRECTIVES, CORE_DIRECTIVES, FoodFormComponent, FoodListComponent],
     templateUrl: 'app/components/mainFood/mainFood.component.html'
 })
-
 
 export class MainFoodComponent implements OnInit {
     public foodSelectedFromList: FoodItem;

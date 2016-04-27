@@ -1,9 +1,10 @@
 import { Component } from 'angular2/core';
-import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS,Location } from 'angular2/router';
+import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS, Location } from 'angular2/router';
 import { HomeComponent } from  './components/home/home.component';
 import { MainFoodComponent } from  './components/mainFood/mainFood.component';
 import { Configuration } from  './shared/app.configuration';
 import { FoodDetailsComponent } from './components/foodDetails/foodDetails.component';
+import { FoodComponent } from './components/food/food.component';
 
 @Component({
     selector: 'foodChooser-app',
@@ -15,8 +16,8 @@ import { FoodDetailsComponent } from './components/foodDetails/foodDetails.compo
 
 @RouteConfig([
     { path: '/home', name: 'Home', component: HomeComponent, useAsDefault: true },
-    { path: '/food', name: 'Food', component: MainFoodComponent },
-    { path: '/food/:foodId', name: 'FoodDetails', component: FoodDetailsComponent }
+    { path: '/food/...', name: 'Food', component: FoodComponent },
+    //{ path: '/food/:foodId', name: 'FoodDetails', component: FoodDetailsComponent }
 ])
 
 export class AppComponent {
