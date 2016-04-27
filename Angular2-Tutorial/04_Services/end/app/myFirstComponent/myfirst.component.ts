@@ -3,7 +3,7 @@ import { MyFirstService } from '../services/myfirst.service';
 
 @Component({
     selector: 'my-first-component',
-    providers: [MyFirstService],
+    //providers: [MyFirstService],
     templateUrl: 'app/myFirstComponent/myFirst.component.html'
 })
 export class MyFirstComponent {
