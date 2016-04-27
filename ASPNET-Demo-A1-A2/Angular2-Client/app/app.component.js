@@ -48,7 +48,7 @@ System.register(['angular2/core', 'angular2/router', './components/home/home.com
                     }),
                     router_1.RouteConfig([
                         { path: '/home', name: 'Home', component: home_component_1.HomeComponent, useAsDefault: true },
-                        { path: '/food/...', name: 'Food', component: food_component_1.FoodComponent },
+                        { path: '/food/...', name: 'Food', component: food_component_1.FoodComponent }
                     ]), 
                     __metadata('design:paramtypes', [app_configuration_1.Configuration, router_1.Location])
                 ], AppComponent);

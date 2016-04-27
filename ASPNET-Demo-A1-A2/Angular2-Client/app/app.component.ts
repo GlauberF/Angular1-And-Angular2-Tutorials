@@ -16,8 +16,7 @@ import { FoodComponent } from './components/food/food.component';
 
 @RouteConfig([
     { path: '/home', name: 'Home', component: HomeComponent, useAsDefault: true },
-    { path: '/food/...', name: 'Food', component: FoodComponent },
-    //{ path: '/food/:foodId', name: 'FoodDetails', component: FoodDetailsComponent }
+    { path: '/food/...', name: 'Food', component: FoodComponent }
 ])
 
 export class AppComponent {
