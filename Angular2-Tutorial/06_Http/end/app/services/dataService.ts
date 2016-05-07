@@ -1,8 +1,8 @@
-﻿import { Injectable } from 'angular2/core';
-import { Http, Response, Headers } from 'angular2/http';
-import 'rxjs/add/operator/map'
+﻿import { Injectable } from '@angular/core';
+import { Http, Response, Headers } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { Configuration } from '../app.constants';
+import 'rxjs/Rx';
 
 @Injectable()
 export class DataService {
@@ -23,23 +23,23 @@ export class DataService {
         return this._http.get(this.actionUrl).map((response: Response) => <any>response.json());
     }
 
-    public GetSingle = (search: string): Observable<Response> => {
+    public GetSingle = (search: string): Observable<any> => {
         return this._http.get(this.actionUrl + 't=' + search).map(res => res.json());
     }
 
-    public Add = (itemName: string): Observable<Response> => {
+    public Add = (itemName: string): Observable<any> => {
         var toAdd = JSON.stringify({ ItemName: itemName });
 
         return this._http.post(this.actionUrl, toAdd, { headers: this.headers }).map(res => res.json());
     }
 
-    public Update = (id: number, itemToUpdate: any): Observable<Response> => {
+    public Update = (id: number, itemToUpdate: any): Observable<any> => {
         return this._http
             .put(this.actionUrl + id, JSON.stringify(itemToUpdate), { headers: this.headers })
             .map(res => res.json());
     }
 
-    public Delete = (id: number): Observable<Response> => {
+    public Delete = (id: number): Observable<any> => {
         return this._http.delete(this.actionUrl + id);
     }
 }

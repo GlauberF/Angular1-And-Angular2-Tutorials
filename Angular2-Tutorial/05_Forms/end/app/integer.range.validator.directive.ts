@@ -1,6 +1,6 @@
-import { Directive, provide } from 'angular2/core';
+import { Directive, provide } from '@angular/core';
 import { IntegerValidator } from './integer.validator';
-import { NG_VALIDATORS } from 'angular2/common';
+import { NG_VALIDATORS } from '@angular/common';
 
 @Directive({
     selector: '[isInRange][ngControl]',
