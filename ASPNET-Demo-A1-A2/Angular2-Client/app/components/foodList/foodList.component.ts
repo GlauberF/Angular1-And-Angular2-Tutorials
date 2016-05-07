@@ -1,7 +1,7 @@
-import { Component, OnInit, Output, EventEmitter, Input } from 'angular2/core';
-import { CORE_DIRECTIVES } from 'angular2/common';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { CORE_DIRECTIVES } from '@angular/common';
 import { FoodDataService } from '../../shared/food.dataservice';
-import { RouteConfig, ROUTER_DIRECTIVES } from 'angular2/router';
+import { RouteConfig, ROUTER_DIRECTIVES } from '@angular/router-deprecated';
 import { FoodItem } from '../../models/foodItem';
 
 @Component({

@@ -1,5 +1,5 @@
-import {Component}     from 'angular2/core';
-import {RouteConfig, RouterOutlet} from 'angular2/router';
+import { Component }     from '@angular/core';
+import { RouteConfig, RouterOutlet } from '@angular/router-deprecated';
 import { FoodFormComponent } from '../foodForm/foodForm.component';
 import { FoodListComponent } from '../foodList/foodList.component';
 import { FoodDetailsComponent } from '../foodDetails/foodDetails.component';
