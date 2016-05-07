@@ -1,5 +1,5 @@
-import { Component}     from 'angular2/core';
-import { RouteConfig, RouterOutlet } from 'angular2/router';
+import { Component}     from '@angular/core';
+import { RouteConfig, RouterOutlet } from '@angular/router-deprecated';
 import { Child1Component } from '../child1Component/child1.component';
 import { Child2Component } from '../child2Component/child2.component';
 
