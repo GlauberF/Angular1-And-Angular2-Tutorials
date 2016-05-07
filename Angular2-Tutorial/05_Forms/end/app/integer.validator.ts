@@ -13,7 +13,7 @@ export class IntegerValidator {
     static isNumber(c: Control): any {
 
         if (isNaN(parseFloat(c.value)) || isFinite(c.value)) {
-            return { 'isNumber': false };
+            return { 'isNumber': false } ;
         }
 
         return null;
