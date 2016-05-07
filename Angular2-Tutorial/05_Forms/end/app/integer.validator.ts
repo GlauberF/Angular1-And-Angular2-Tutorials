@@ -12,10 +12,10 @@ export class IntegerValidator {
 
     static isNumber(c: Control): any {
 
-        if (!isNaN(parseFloat(c.value)) && isFinite(c.value)) {
-            return {};
+        if (isNaN(parseFloat(c.value)) || isFinite(c.value)) {
+            return { 'isNumber': false };
         }
 
-        return { 'isNumber': true };
+        return null;
     }
 }

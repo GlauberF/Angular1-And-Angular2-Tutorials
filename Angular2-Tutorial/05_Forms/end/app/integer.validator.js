@@ -9,10 +9,10 @@ var IntegerValidator = (function () {
         return null;
     };
     IntegerValidator.isNumber = function (c) {
-        if (!isNaN(parseFloat(c.value)) && isFinite(c.value)) {
-            return {};
+        if (isNaN(parseFloat(c.value)) || isFinite(c.value)) {
+            return { 'isNumber': false };
         }
-        return { 'isNumber': true };
+        return null;
     };
     return IntegerValidator;
 }());
