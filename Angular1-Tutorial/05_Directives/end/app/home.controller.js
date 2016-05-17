@@ -66,8 +66,8 @@
             }
         };
     }
-    
-     function isolatedScopeDirectiveWithController() {
+
+    function isolatedScopeDirectiveWithController() {
         return {
             restrict: "AEC",
             link: function (scope, element, attributes, controller) {
@@ -80,6 +80,40 @@
         };
     }
 
+    function beautifulDirective() {
+
+        var controller = function () {
+
+            var vm = this;
+
+            function init() {
+                vm.items = ["Hamburger", "Pommes", "Ketchup"];
+            }
+
+            init();
+
+            vm.addItem = function () {
+                alert("AddItem");
+            };
+        };
+
+        var template = '<button ng-click="vm.addItem()">Add Item</button>' +
+            '<ul><li ng-repeat="item in vm.items">{{ ::item }}</li></ul>';
+
+        return {
+            restrict: 'EA',
+            scope: {
+                datasource: '=',
+                add: '&',
+            },
+            controller: controller,
+            controllerAs: 'vm',
+            bindToController: true,
+            template: template
+        };
+    }
+
+
     angular
         .module("AngularJsDemoApp")
         .controller("homeController", homeController)
@@ -88,6 +122,7 @@
         .directive("isolatedScopeDirective", isolatedScopeDirective)
         .directive("isolatedScopeDirectiveWithController", isolatedScopeDirectiveWithController)
         .directive("isolatedScopeDirectiveWithLink", isolatedScopeDirectiveWithLink)
+        .directive("beautifulDirective", beautifulDirective)
         .directive("myDirective", myDirective);
 
 } ());
