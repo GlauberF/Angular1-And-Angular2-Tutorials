@@ -35,13 +35,21 @@
 
 <body data-ng-app="AngularJsDemoApp">
 
-    <div data-ng-controller="homeController">
-        <h3>{{value}}</h3>
+    <div class="container">
+        <div data-ng-controller="homeController">
+            <h3>{{value}}</h3>
+        </div>
+        
+        <div data-ng-controller="firstController">
+            <h3>{{value}}</h3>
+        </div>
     </div>
 
     <script src="libs/angular/angular.js"></script>
 
     <script src="app/application.js"></script>
+    <script src="app/firstModule.module.js"></script>
+    <script src="app/firstModule.controller.js"></script>
     <script src="app/home.controller.js"></script>
 </body>
 

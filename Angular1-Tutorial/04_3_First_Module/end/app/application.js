@@ -2,5 +2,5 @@
 
     "use strict";
 
-    angular.module("AngularJsDemoApp", []);
+    angular.module("AngularJsDemoApp", ["firstModule"]);
 } ());
