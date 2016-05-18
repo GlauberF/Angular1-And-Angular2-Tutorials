@@ -5,7 +5,7 @@
             required>
 
         <div *ngIf="f?.controls?.foodName?.hasError('required') && !f?.controls?.foodName?.pending && f?.controls?.foodName?.touched">
-            Pflichtfeld!
+            Required Field
         </div>
     </div>
     <div class="form-group">
@@ -13,15 +13,15 @@
         <input type="number" class="form-control" id="exampleInputEmail1" ngControl="calories" placeholder="Calories" [(ngModel)]="foodItem.Calories"
             required isNumber isInRange>
         <div *ngIf="f?.controls?.calories?.hasError('required') && f?.controls?.calories?.touched">
-            Pflichtfeld!
+            Required Field
         </div>
 
         <div *ngIf="f?.controls?.calories?.hasError('isInRange') && f?.controls?.calories?.touched">
-            Bitte gib eine Nummer im Integer-Bereich ein
+            Please enter a number in a valid range
         </div>
 
         <div *ngIf="f?.controls?.calories?.hasError('isNumber') && f?.controls?.calories?.touched">
-            Bitte gib eine valide Nummer ein
+            Please enter a valid number
         </div>
 
     </div>
