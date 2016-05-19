@@ -59,7 +59,8 @@
             bindToController: {
                 givenText: '=text'
             },
-            controller: 'secondController',
+            controller: function(){
+            },
             controllerAs: 'vm',
             template: "<h4>Isolated: {{vm.givenText}}</h4>"
         };
