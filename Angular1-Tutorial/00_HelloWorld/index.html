@@ -36,15 +36,17 @@
 <body data-ng-app="AngularJsDemoApp">
 
     <div ng-controller="myFirstController">
-        <h1>{{value}}</h1>
+        <div class="container">
+            <h1>{{value}}</h1>
+        </div>
     </div>
 
     <script src="libs/angular/angular.js"></script>
 
     <script type="text/javascript">
-        angular.module("AngularJsDemoApp", [])
-        .controller("myFirstController", function myFirstController($scope) {
-            $scope.value = "This is my first app";
+        var app = angular.module("AngularJsDemoApp", []);
+        app.controller("myFirstController", function myFirstController($scope) {
+            $scope.value = "asdasdasd";
         });
     </script>
 

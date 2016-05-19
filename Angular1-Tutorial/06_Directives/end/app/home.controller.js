@@ -32,6 +32,11 @@
         vm.text = "This comes from the second controller";
         vm.text2 = "This is for the isolated directives...."
     }
+    
+     function thirdController() {
+        var vm = this;
+        vm.items = ["Hamburger", "Pommes", "Ketchup"];
+    }
 
     function myDirective() {
         return {
@@ -50,20 +55,32 @@
     function isolatedScopeDirective() {
         return {
             restrict: "AEC",
-            scope: {
+            scope: {},
+            bindToController: {
                 givenText: '=text'
             },
-            template: "<h4>Isolated: {{givenText}}</h4>"
+            controller: 'secondController',
+            controllerAs: 'vm',
+            template: "<h4>Isolated: {{vm.givenText}}</h4>"
         };
     }
 
     function isolatedScopeDirectiveWithLink() {
         return {
             restrict: "AEC",
+            scope: {},
+            bindToController: {
+                givenText: '=text'
+            },
+            controller: function () {
+
+            },
+            controllerAs: 'vm',
             link: function (scope, element, attributes, controller) {
                 element.html(scope.vm.text);
                 element.css("background-color", "#ffff00");
-            }
+            },
+            template: "{{vm.givenText}}"
         };
     }
 
@@ -73,10 +90,16 @@
             link: function (scope, element, attributes, controller) {
                 element.css("background-color", "#ffff00");
             },
-            controller: function ($scope) {
-                $scope.inside = "This is inside the directive";
+            scope: {},
+            bindToController: {
+
             },
-            template: "{{inside}}"
+            controller: function () {
+                var vm = this;
+                vm.inside = "This is inside the directive";
+            },
+            controllerAs: 'vm',
+            template: "{{vm.inside}}"
         };
     }
 
@@ -85,30 +108,24 @@
         var controller = function () {
 
             var vm = this;
-
-            function init() {
-                vm.items = ["Hamburger", "Pommes", "Ketchup"];
-            }
-
-            init();
-
+            
             vm.addItem = function () {
                 alert("AddItem");
             };
+            
         };
 
         var template = '<button ng-click="vm.addItem()">Add Item</button>' +
-            '<ul><li ng-repeat="item in vm.items">{{ ::item }}</li></ul>';
+            '<ul><li ng-repeat="item in vm.datasource">{{ ::item }}</li></ul>';
 
         return {
             restrict: 'EA',
-            scope: {
-                datasource: '=',
-                add: '&',
-            },
+            scope: { },
             controller: controller,
             controllerAs: 'vm',
-            bindToController: true,
+            bindToController: {
+                datasource: '='
+            },
             template: template
         };
     }
@@ -118,6 +135,7 @@
         .module("AngularJsDemoApp")
         .controller("homeController", homeController)
         .controller("secondController", secondController)
+        .controller("thirdController", thirdController)
         .directive("mySecondDirective", myDirective2)
         .directive("isolatedScopeDirective", isolatedScopeDirective)
         .directive("isolatedScopeDirectiveWithController", isolatedScopeDirectiveWithController)

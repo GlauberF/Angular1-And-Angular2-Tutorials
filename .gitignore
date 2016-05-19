@@ -27,3 +27,5 @@ ASPNET-Demo-A1-A2/Server/FoodAPI/Properties/PublishProfiles/
 Angular1-Tutorial/10_Routing/end_v1/node_modules
 Angular1-Tutorial/10_Routing/end_v2/node_modules
 Angular2-Tutorial/00_Angular5MinQuickStart/node_modules/
+Angular1-Tutorial/00_HelloWorld/libs
+Angular1-Tutorial/00_HelloWorld/node_modules/
