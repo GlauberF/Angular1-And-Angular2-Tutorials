@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_deprecated_1 = require('@angular/router-deprecated');
-var index_1 = require('@angular/common/index');
+var common_1 = require('@angular/common');
 var home_component_1 = require('./components/home/home.component');
 var app_configuration_1 = require('./shared/app.configuration');
 var food_component_1 = require('./components/food/food.component');
@@ -34,7 +34,7 @@ var AppComponent = (function () {
             { path: '/home', name: 'Home', component: home_component_1.HomeComponent, useAsDefault: true },
             { path: '/food/...', name: 'Food', component: food_component_1.FoodComponent }
         ]), 
-        __metadata('design:paramtypes', [app_configuration_1.Configuration, index_1.Location])
+        __metadata('design:paramtypes', [app_configuration_1.Configuration, common_1.Location])
     ], AppComponent);
     return AppComponent;
 }());

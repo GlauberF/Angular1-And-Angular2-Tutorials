@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/router-deprecated';
-import { Location } from '@angular/common/index';
+import { Location } from '@angular/common';
 import { HomeComponent } from  './components/home/home.component';
 import { MainFoodComponent } from  './components/mainFood/mainFood.component';
 import { Configuration } from  './shared/app.configuration';

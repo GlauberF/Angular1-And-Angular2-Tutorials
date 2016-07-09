@@ -4,7 +4,7 @@
         <th>Calories</th>
         <th class="text-right">Actions</th>
     </tr>
-    <tr *ngFor="#food of foods">
+    <tr *ngFor="let food of foods; let i = index">
         <td class="text-left">
             {{food.Name}}
         </td>
