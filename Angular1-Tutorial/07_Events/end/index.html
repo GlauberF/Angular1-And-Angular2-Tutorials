@@ -45,7 +45,15 @@
                 <li ng-repeat="item in vm.items" ng-click="vm.alertTheItem(item)">{{item}}</li>
             </ul>
 
+            <div ng-controller="parentCtrl as parent">
+                {{ parent.data }}
+                <br/>
+                <button ng-click="parent.throwEventUp()">Throw Event Up</button>
+            </div>
+
         </div>
+
+
     </div>
 
     <script src="libs/angular/angular.js"></script>

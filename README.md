@@ -1,6 +1,6 @@
-#Angular 1 and Angular 2 Tutorial
+# Angular 1 and Angular 2 Tutorial
 
-###This repository contains material for getting started with Angular 1 and Angular 2.
+### This repository contains material for getting started with Angular 1 and Angular 2.
 
 All Angular 1 repositories can be started with
 

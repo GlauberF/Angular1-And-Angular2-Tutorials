@@ -99,13 +99,17 @@
                     <h3>Isolated Scope With Link</h3>
                     <isolated-Scope-Directive-With-Link text="vm.text"></isolated-Scope-Directive-With-Link>
                 </p>
-            </div> 
+            </div>
             <hr/>
-            <div ng-controller="secondController as vm">
+            <div>
                 <p>
                     <h3>Isolated Scope With Controller</h3>
                     <isolated-Scope-Directive-With-Controller></isolated-Scope-Directive-With-Controller>
                 </p>
+            </div>
+            <hr/>
+            <div ng-controller="thirdController as vm">
+                <beautiful-Directive datasource="vm.items"></beautiful-Directive>
             </div>
         </div>
 
