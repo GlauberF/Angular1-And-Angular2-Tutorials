@@ -3,6 +3,7 @@ import { CORE_DIRECTIVES } from '@angular/common';
 import { RouteConfig, ROUTER_DIRECTIVES } from '@angular/router-deprecated';
 import { FoodDataService } from '../../shared/food.dataservice';
 import { FoodItem } from '../../models/foodItem';
+import { NgForm }    from '@angular/forms';
 import { IsInRangeValidatorDirective } from '../../validators/integer.range.validator.directive';
 import { IsNumberValidatorDirective } from '../../validators/integer.number.validator.directive';
 
@@ -18,6 +19,8 @@ export class FoodFormComponent {
     constructor(private _foodDataService: FoodDataService) {
 
     }
+
+    get diagnostic() { return JSON.stringify(this.foodItem); }
 
     public AddOrUpdateFood = (): void => {
         if (this.foodItem.Id) {

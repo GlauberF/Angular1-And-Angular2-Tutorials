@@ -44,6 +44,11 @@ var FoodFormComponent = (function () {
             }, function (error) { return console.log(error); });
         };
     }
+    Object.defineProperty(FoodFormComponent.prototype, "diagnostic", {
+        get: function () { return JSON.stringify(this.foodItem); },
+        enumerable: true,
+        configurable: true
+    });
     __decorate([
         core_1.Input(), 
         __metadata('design:type', foodItem_1.FoodItem)
