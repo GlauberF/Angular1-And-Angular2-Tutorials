@@ -1,7 +1,7 @@
 describe('homeServiceTests', function () {
     beforeEach(angular.mock.module('AngularJsDemoApp'));
-    var homeService = {};
-    var $httpBackend;
+    homeService = {};
+    $httpBackend = {};
 
     beforeEach(inject(function (_homeService_, _$httpBackend_) {
         // The injector unwraps the underscores (_) from around the parameter names when matching
@@ -23,7 +23,7 @@ describe('homeServiceTests', function () {
         expect($http.get).toHaveBeenCalled();
     }));
 
-    it('values from service should be correct', function () {
+    it('values from service should be correct', inject(function (homeService, $httpBackend) {
         var responseData;
 
         $httpBackend.when('GET', 'http://foodapi4demo.azurewebsites.net/api/').respond(200, []);
@@ -35,5 +35,5 @@ describe('homeServiceTests', function () {
         $httpBackend.flush();
         
         expect(responseData).toEqual([]);
-    });
+    }));
 });
