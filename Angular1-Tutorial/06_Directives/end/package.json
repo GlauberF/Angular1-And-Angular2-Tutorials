@@ -2,7 +2,8 @@
     "name": "angular-demo",
     "version": "1.0.0",
     "scripts": {
-        "start": "concurrently \"bower install\" \"npm run lite\" ",
+        "start": "npm run lite",
+        "postinstall": "bower install",
         "lite": "lite-server"
     },
     "license": "ISC",
