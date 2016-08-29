@@ -1,25 +1,15 @@
-<div ng-include="'app/shared/navigation.html'"></div>
+<!--<div ng-include="'app/shared/navigation.html'"></div>-->
 
-<div class="container">
-    <div class="starter-template">
-        <div class="row">
-            <div class="centered">
-
-            </div>
-        </div>
-    </div>
-
-</div>
 
 <div class="container">
    <div class="jumbotron starter-template">
         <h1>Random Food:</h1>
         <p>
-            <h2 ng-show="!vm.selectedFood">Getting your food suggestions<br />Please wait...</h2>
-            <h2 ng-show="vm.selectedFood">{{vm.selectedFood.Name}}<br/>{{vm.selectedFood.Calories}}</h2>
+            <h2 ng-show="!$ctrl.selectedFood">Getting your food suggestions<br />Please wait...</h2>
+            <h2 ng-show="$ctrl.selectedFood">{{$ctrl.selectedFood.Name}}<br/>{{$ctrl.selectedFood.Calories}}</h2>
             
-            <h3 ng-show="vm.selectedFood">{{vm.lastUpdatedDate | date:'medium'}}</h3>
-            <button type="button" class="btn btn-primary" data-ng-click="vm.updateFood()">Get new Food</button>
+            <h3 ng-show="$ctrl.selectedFood">{{$ctrl.lastUpdatedDate | date:'medium'}}</h3>
+            <button type="button" class="btn btn-primary" data-ng-click="$ctrl.getFood()">Get new Food</button>
         </p>
     </div>
 </div>

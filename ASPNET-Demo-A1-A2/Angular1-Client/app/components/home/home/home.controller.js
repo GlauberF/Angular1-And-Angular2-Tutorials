@@ -5,38 +5,34 @@
         .module("components.home")
         .controller("homeController", homeController);
 
-    homeController.$inject = [];
+    homeController.$inject = ["foodService"];
 
-    function homeController() {
+    function homeController(foodService) {
 
-        // var vm = this;
+        var ctrl = this;
 
-        // vm.selectedFood = {};
+        ctrl.selectedFood = {};
 
-        // var getFood = function () {
+        var getFood = function () {
+            console.log("asdas");
+            foodService
+                .getAllFood()
+                .then(
+                function (result) {
+                    var allFood = result.data;
+                    var randomIndex = Math.floor(Math.random() * allFood.length);
+                    ctrl.selectedFood = allFood[randomIndex];
+                    ctrl.lastUpdatedDate = new Date();
+                },
+                function (response) {
+                    //Error
+                    console.log(response);
+                }).then(function () {
+                    //finally
+                });
+        };
 
-        //     foodService
-        //         .getAllFood()
-        //         .then(
-        //         function (result) {
-        //             var allFood = result.data;
-        //             var randomIndex = Math.floor(Math.random() * allFood.length);
-        //             vm.selectedFood = allFood[randomIndex];
-        //             vm.lastUpdatedDate = new Date();
-        //         },
-        //         function (response) {
-        //             //Error
-        //             console.log(response);
-        //         }).then(function () {
-        //             //finally
-        //         });
-        // };
-
-        // var updateFood = function () {
-        //     getFood();
-        // };
-
-        // vm.updateFood = updateFood;
-        // getFood();
+        ctrl.getFood = getFood;
+        getFood();
     }
 })();

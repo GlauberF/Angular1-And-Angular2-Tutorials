@@ -4,6 +4,7 @@
 
   angular
     .module('components', [
-      'components.home'
+      'components.home',
+      'components.shared'
     ]);
 } ());
