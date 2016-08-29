@@ -8,10 +8,7 @@
     homeController.$inject = ["foodService"];
 
     function homeController(foodService) {
-
         var ctrl = this;
-
-        ctrl.selectedFood = {};
 
         var getFood = function () {
             console.log("asdas");

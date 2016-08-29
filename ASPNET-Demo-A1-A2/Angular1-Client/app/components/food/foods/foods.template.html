@@ -1,0 +1,6 @@
+<div class="jumbotron">
+    <foodform on-add="$ctrl.foodAdded($event);"></foodform>
+    <br/><br/>
+    <foodlist foods="$ctrl.foods" 
+    on-delete="$ctrl.foodDeleted($event)"></foodlist>
+</div>
