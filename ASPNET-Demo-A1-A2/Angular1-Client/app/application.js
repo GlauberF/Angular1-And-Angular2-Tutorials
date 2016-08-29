@@ -4,21 +4,19 @@
 
     angular.module("AngularJsDemoApp",
         [
-            "ngRoute",
-            "ngAnimate",
-            "ngResource",
-            "ui.bootstrap",
-            "angular-loading-bar",
-            "toastr",
+            //"ui.router",
+            //"ngAnimate",
+            //"angular-loading-bar",
+            //"toastr",
 
-            "home.homeModule",
-            "food.foodModule"
-        ]).config([
-            "cfpLoadingBarProvider", function(cfpLoadingBarProvider) {
-                cfpLoadingBarProvider.includeSpinner = false;
-            }
+             "components",
+            // "food.foodModule"
         ])
-        .constant("_", window._)
+        // .config([
+        //     "cfpLoadingBarProvider", function(cfpLoadingBarProvider) {
+        //         cfpLoadingBarProvider.includeSpinner = false;
+        //     }
+        // ])
         .constant("appSettings",
         {
             //serverPath: "http://localhost:5655/"

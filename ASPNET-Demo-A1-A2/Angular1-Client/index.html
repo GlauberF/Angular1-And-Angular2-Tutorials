@@ -8,8 +8,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <link href="libs/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet" />
-    <link href="libs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="node_modules/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/custom.css">
 
     <title>Angular Js Demo Application</title>
@@ -25,27 +25,27 @@
 
 <body data-ng-app="AngularJsDemoApp">
 
-    <div data-ng-view></div>
+    <root>
+        <span class="loader">Loading...</span>
+    </root>
 
-    <script src="libs/angular/angular.js"></script>
-    <script src="libs/angular-animate/angular-animate.js"></script>
-    <script src="libs/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-    <script src="libs/angular-loading-bar/build/loading-bar.js"></script>
-    <script src="libs/angular-resource/angular-resource.js"></script>
-    <script src="libs/angular-route/angular-route.js"></script>
-    <script src="libs/angular-toastr/dist/angular-toastr.tpls.js"></script>
-    <script src="libs/jquery/dist/jquery.js"></script>
-    <script src="libs/bootstrap/dist/js/bootstrap.js"></script>
-    <script src="libs/lodash/lodash.js"></script>
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/angular-animate/angular-animate.js"></script>
+    <script src="node_modules/angular-ui-router/release/angular-ui-router.js"></script>
 
-	
-    <script src="app/application.js"></script>
-    <script src="app/food/foodModule.js"></script>
-    <script src="app/home/homeModule.js"></script>
-    <script src="app/food/Controllers/foodController.js"></script>
-    <script src="app/food/Controllers/foodDetailsController.js"></script>
-    <script src="app/home/Controllers/homeController.js"></script>
-    <script src="app/services/foodServices.js"></script>
+    <script src="app/root.module.js"></script>
+    <script src="app/components/components.module.js"></script>
+    <script src="app/components/home/home.module.js"></script>
+
+    <script src="app/root.component.js"></script>
+    <script src="app/components/home/home/home.controller.js"></script>
+
+    <script src="app/components/home/home/home.component.js"></script>
+    <script src="app/services/foodservice.js"></script>
+
+
+
+
 
 </body>
 

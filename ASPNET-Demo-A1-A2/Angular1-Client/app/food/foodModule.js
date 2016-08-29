@@ -1,29 +1,31 @@
-﻿(function() {
+﻿(function () {
 
     "use strict";
 
     var foodModule = angular
-        .module("food.foodModule", ["ngRoute"]);
+        .module("food.foodModule", ["ui.router"]);
 
     foodModule.config(foodconfig);
 
-    foodModule.$inject = ["$routeProvider"];
+    foodModule.$inject = ["$stateProvider", "$urlRouterProvider"];
 
     /* @ngInject */
-    function foodconfig($routeProvider) {
-        $routeProvider
-            .when("/food", {
+    function foodconfig($stateProvider, $urlRouterProvider) {
+
+        $urlRouterProvider.otherwise('/');
+
+        $stateProvider
+            .state('food', {
+                url: '/food',
                 controller: "food.controllers.foodController",
                 controllerAs: "vm",
                 templateUrl: "app/food/Templates/food.html"
             })
-            .when("/food/:foodId", {
+            .state('foodDetail', {
+                url: '/food/:foodId',
                 controller: "food.controllers.foodDetailsController",
                 controllerAs: "vm",
                 templateUrl: "app/food/Templates/foodDetails.html"
-            })
-            .otherwise({
-                redirectTo: "/"
             });
     }
 })();

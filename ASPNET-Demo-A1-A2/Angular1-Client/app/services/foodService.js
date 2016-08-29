@@ -2,13 +2,13 @@
     "use strict";
 
     angular
-        .module("home.homeModule")
-        .factory("home.services.foodService", foodService);
+        .module("AngularJsDemoApp")
+        .factory("foodService", foodService);
 
-    foodService.$inject = ["$http", "$q", "appSettings", "_"];
+    foodService.$inject = ["$http", "$q", "appSettings"];
 
     /* @ngInject */
-    function foodService($http, $q, appSettings, _) {
+    function foodService($http, $q, appSettings) {
 
         var url = appSettings.serverPath + "api/food/";
         //var url = "api/foodItems.json";
