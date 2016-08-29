@@ -13,5 +13,15 @@
 
     angular
         .module('components.home')
-        .component('homeComponent', homeComponent);
+        .component('homeComponent', homeComponent)
+        .config(function ($stateProvider, $urlRouterProvider) {
+
+            $urlRouterProvider.otherwise("/");
+
+            $stateProvider
+                .state('home', {
+                    url: '/',
+                    component: 'homeComponent',
+                });
+        });
 })();
