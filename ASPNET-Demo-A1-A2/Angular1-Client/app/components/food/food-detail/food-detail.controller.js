@@ -5,10 +5,13 @@
         .module("components.food")
         .controller("foodDetailController", foodDetailController);
 
-    foodDetailController.$inject = [];
+    foodDetailController.$inject = ["$stateParams", "foodService"];
 
-    function foodDetailController() {
+    function foodDetailController($stateParams, foodService) {
         var ctrl = this;
-        console.log(ctrl);
+        foodService.getSingleFood($stateParams.id)
+            .then(function (food) {
+                ctrl.food = food;
+            });
     }
 })();
