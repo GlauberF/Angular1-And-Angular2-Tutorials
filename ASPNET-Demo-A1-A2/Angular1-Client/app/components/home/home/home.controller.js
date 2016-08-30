@@ -11,7 +11,6 @@
         var ctrl = this;
 
         var getFood = function () {
-            console.log("asdas");
             foodService
                 .getAllFood()
                 .then(

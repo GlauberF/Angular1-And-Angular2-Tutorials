@@ -1,38 +1,38 @@
-﻿(function() {
+﻿(function () {
     "use strict";
 
     angular
         .module("AngularJsDemoApp")
         .factory("foodService", foodService);
 
-    foodService.$inject = ["$http", "$q", "appSettings"];
+    foodService.$inject = ["$http", "appSettings"];
 
     /* @ngInject */
-    function foodService($http, $q, appSettings) {
+    function foodService($http, appSettings) {
 
         //var url = appSettings.serverPath + "api/food/";
         var url = "api/foodItems.json";
 
-        var _getAllFood = function() {
+        var _getAllFood = function () {
             return $http.get(url);
         };
 
-        var _getSingleFood = function(id) {
+        var _getSingleFood = function (id) {
             return $http.get(url + id);
         };
 
-        var _updateFood = function(foodToUpdate) {
+        var _updateFood = function (foodToUpdate) {
             return $http.put(url + foodToUpdate.Id, foodToUpdate);
         };
 
-        var _addFood = function(newFoodToAdd) {
+        var _addFood = function (newFoodToAdd) {
 
             newFoodToAdd.created = new Date();
 
             return $http.post(url, newFoodToAdd);
         };
 
-        var _deleteFood = function(foodToDelete) {
+        var _deleteFood = function (foodToDelete) {
             return $http.delete(url + foodToDelete.Id);
         };
 

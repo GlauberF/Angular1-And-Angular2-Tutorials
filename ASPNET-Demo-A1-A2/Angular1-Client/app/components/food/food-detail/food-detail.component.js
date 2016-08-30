@@ -19,7 +19,7 @@
 
             $stateProvider
                 .state('food', {
-                    url: '/food/:id',
+                    url: '/foods/:id',
                     component: 'foodDetail',
                 });
         });
