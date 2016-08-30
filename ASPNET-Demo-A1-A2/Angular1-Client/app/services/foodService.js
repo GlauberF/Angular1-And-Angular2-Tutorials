@@ -10,8 +10,8 @@
     /* @ngInject */
     function foodService($http, $q, appSettings) {
 
-        var url = appSettings.serverPath + "api/food/";
-        //var url = "api/foodItems.json";
+        //var url = appSettings.serverPath + "api/food/";
+        var url = "api/foodItems.json";
 
         var _getAllFood = function() {
             return $http.get(url);

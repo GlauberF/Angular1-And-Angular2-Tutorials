@@ -10,31 +10,54 @@
     function foodFormController(foodService) {
         var ctrl = this;
 
-        ctrl.food = {};
-
         ctrl.saveFood = function () {
-            
-            ctrl.error = false;
+            addOrUpdateFood(ctrl.food);
+        };
+
+        var addOrUpdateFood = function (newFood) {
+
+            ctrl.inProgress = true;
             ctrl.success = false;
+            ctrl.error = false;
 
-            foodService.addFood(ctrl.food)
+            if (newFood.Id) {
+                console.log("foodUpdated");
+                foodService.updateFood(newFood)
+                    .then(function () {
 
-                .then(function () {
-                    ctrl.success = true;
-                    ctrl.onAdd({
-                        $event: {
-                            food: ctrl.food
-                        }
+                        ctrl.onUpdate({
+                            $event: {
+                                food: newFood
+                            }
+                        });
+                        newFood = {};
+                        ctrl.success = true;
+                    },
+                    function (response) {
+                        ctrl.error = true;
+                        handleError(response);
+                    }).then(function () {
+                        ctrl.inProgress = false;
                     });
-                    ctrl.food = {};
-                },
-                function (response) {
-                    //Error
-                    ctrl.error = true;
-                    handleError(response);
-                }).then(function () {
-                    ctrl.inProgress = false;
-                });
+            } else {
+                foodService.addFood(newFood)
+                    .then(function () {
+                        ctrl.onAdd({
+                            $event: {
+                                food: newFood
+                            }
+                        });
+                        newFood = {};
+                        ctrl.success = true;
+                    },
+                    function (response) {
+                        //Error
+                        ctrl.error = true;
+                        handleError(response);
+                    }).then(function () {
+                        ctrl.inProgress = false;
+                    });
+            }
         };
 
         var handleError = function (response) {

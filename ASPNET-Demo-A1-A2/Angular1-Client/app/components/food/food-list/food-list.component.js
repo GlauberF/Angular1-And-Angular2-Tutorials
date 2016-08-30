@@ -5,7 +5,8 @@
     var foodList = {
         bindings: {
             foods: '<',
-            onDelete: '&'
+            onDelete: '&',
+            onEdit: '&'
         },
         templateUrl: 'app/components/food/food-list/food-list.template.html',
         controller: 'foodListController'

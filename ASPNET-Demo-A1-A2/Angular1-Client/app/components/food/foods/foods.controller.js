@@ -11,12 +11,21 @@
         var ctrl = this;
 
         ctrl.foodAdded = function (event) {
-            //ctrl.foods.push(event.food);
+            console.log("foodAdded");
+            getFood();
+        };
+
+        ctrl.foodUpdated = function (event) {
+            console.log("foodUpdated");
             getFood();
         };
 
         ctrl.foodDeleted = function (foodToDelete) {
             getFood();
+        };
+
+        ctrl.setFoodItemForEdit = function (event) {
+            ctrl.foodToEdit = event.food;
         };
 
         var getFood = function () {

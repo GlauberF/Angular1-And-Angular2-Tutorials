@@ -17,10 +17,10 @@
             foodService.deleteFood(foodToDelete)
                 .then(function (response) {
                     console.log("Success");
-                    
+
                     ctrl.success = true;
 
-                     ctrl.onDelete({
+                    ctrl.onDelete({
                         $event: {
                             food: ctrl.food
                         }
@@ -33,5 +33,13 @@
                     ctrl.inProgress = false;
                 });
         };
+
+        ctrl.setFoodItemForEdit = function (foodItem) {
+            ctrl.onEdit({
+                $event: {
+                    food: foodItem
+                }
+            });
+        }
     }
 })();

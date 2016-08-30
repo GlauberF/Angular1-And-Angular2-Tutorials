@@ -5,12 +5,12 @@
         "Calories": 123
     },
     {
-        "Id": 1,
+        "Id": 2,
         "Name": "Chips",
         "Calories": 123
     },
     {
-        "Id": 1,
+        "Id": 3,
         "Name": "Bratwurst",
         "Calories": 123
     }

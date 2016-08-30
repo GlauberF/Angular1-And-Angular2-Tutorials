@@ -13,8 +13,8 @@
         </td>
         <td class="text-right">
             <button data-ng-click="$ctrl.deleteFood(food)" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-trash"></span> Delete</button>
-            <!--<button data-ng-click="$ctrl.setFoodItemForEdit(food)" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-edit"></span> Edit</button>
-            <a href="#/food/{{food.Id}}" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-search"></span> Details</a>-->
+            <button data-ng-click="$ctrl.setFoodItemForEdit(food)" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-edit"></span> Edit</button>
+            <a ui-sref="food({id: food.Id})" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-search"></span> Details</a>
         </td>
     </tr>
 </table>
