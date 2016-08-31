@@ -7,7 +7,7 @@
 
     foodListController.$inject = ['foodService'];
 
-    function foodListController(foodService) {
+    function foodListController(foodService, toastr) {
         var ctrl = this;
 
         ctrl.deleteFood = function (foodToDelete) {
@@ -17,7 +17,7 @@
             foodService.deleteFood(foodToDelete)
                 .then(function (response) {
                     console.log('Success');
-
+                   
                     ctrl.success = true;
 
                     ctrl.onDelete({

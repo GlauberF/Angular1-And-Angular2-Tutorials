@@ -5,23 +5,24 @@
         .module('components.food')
         .controller('foodsController', foodsController);
 
-    foodsController.$inject = ['foodService'];
+    foodsController.$inject = ['foodService', 'toastr'];
 
-    function foodsController(foodService) {
+    function foodsController(foodService, toastr) {
         var ctrl = this;
 
         ctrl.foodAdded = function (event) {
-            console.log('foodAdded');
             getFood();
+            toastr.success('Food Added');
         };
 
         ctrl.foodUpdated = function (event) {
-            console.log('foodUpdated');
             getFood();
+            toastr.success('Food Updated');
         };
 
         ctrl.foodDeleted = function (foodToDelete) {
             getFood();
+            toastr.success('Food Deleted');
         };
 
         ctrl.setFoodItemForEdit = function (event) {
@@ -29,6 +30,7 @@
         };
 
         var getFood = function () {
+            ctrl.foods = [];
             ctrl.inProgress = true;
             foodService.getAllFood().then(
                 function (response) {
