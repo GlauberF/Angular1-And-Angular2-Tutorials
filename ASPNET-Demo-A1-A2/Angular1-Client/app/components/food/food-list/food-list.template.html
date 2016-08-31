@@ -1,15 +1,16 @@
 <table class="table">
     <tr>
-        <th><a href="" data-ng-click="predicate = 'Name'; reverse=!reverse">Name</a></th>
-        <th><a href="" data-ng-click="predicate = 'Calories'; reverse=!reverse">Calories</a></th>
+        <th><a href="" data-ng-click="sortType = 'Name'; sortReverse=!sortReverse">Name</a></th>
+        <th><a href="" data-ng-click="sortType = 'Calories'; sortReverse=!sortReverse">Calories</a></th>
         <th class="text-right">Actions</th>
     </tr>
-    <tr data-ng-repeat="food in $ctrl.foods | orderBy:predicate:reverse track by $index">
+
+    <tr data-ng-repeat="food in $ctrl.foods | orderBy:sortType:sortReverse track by $index">
         <td class="text-left">
-            {{::food.Name}}
+            {{food.Name}}
         </td>
         <td class="text-left">
-            {{::food.Calories}}
+            {{food.Calories}}
         </td>
         <td class="text-right">
             <button data-ng-click="$ctrl.deleteFood(food)" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-trash"></span> Delete</button>

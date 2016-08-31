@@ -5,7 +5,7 @@
         .module('components.food')
         .controller('foodListController', foodListController);
 
-    foodListController.$inject = ['foodService'];
+    foodListController.$inject = ['foodService', 'toastr'];
 
     function foodListController(foodService, toastr) {
         var ctrl = this;
@@ -16,10 +16,9 @@
             ctrl.error = false;
             foodService.deleteFood(foodToDelete)
                 .then(function (response) {
-                    console.log('Success');
-                   
-                    ctrl.success = true;
 
+                    ctrl.success = true;
+                    toastr.success('Food Deleted');
                     ctrl.onDelete({
                         $event: {
                             food: ctrl.food
@@ -28,7 +27,7 @@
                 },
                 function (response) {
                     ctrl.error = true;
-                    console.log('Error');
+                    toastr.error('Food Not Deleted');
                 }).then(function () {
                     ctrl.inProgress = false;
                 });

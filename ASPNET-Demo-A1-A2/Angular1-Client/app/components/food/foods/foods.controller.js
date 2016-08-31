@@ -12,17 +12,16 @@
 
         ctrl.foodAdded = function (event) {
             getFood();
-            toastr.success('Food Added');
         };
 
         ctrl.foodUpdated = function (event) {
+            ctrl.foods = [];
             getFood();
-            toastr.success('Food Updated');
         };
 
         ctrl.foodDeleted = function (foodToDelete) {
+            ctrl.foods = [];
             getFood();
-            toastr.success('Food Deleted');
         };
 
         ctrl.setFoodItemForEdit = function (event) {
@@ -30,7 +29,7 @@
         };
 
         var getFood = function () {
-            ctrl.foods = [];
+            
             ctrl.inProgress = true;
             foodService.getAllFood().then(
                 function (response) {
