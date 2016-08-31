@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "start": "npm install && npm run lite",
+    "startProd": "npm install && gulp build:web && npm run lite -c lite-prod-config.js",
     "lite": "lite-server"
   },
   "license": "ISC",
@@ -17,6 +18,15 @@
   },
   "devDependencies": {
     "concurrently": "^2.0.0",
-    "lite-server": "^2.1.0"
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-angular-templatecache": "^2.0.0",
+    "gulp-clean-css": "^2.0.12",
+    "gulp-concat": "^2.6.0",
+    "gulp-inject": "^4.1.0",
+    "gulp-task-listing": "^1.0.1",
+    "gulp-uglify": "^2.0.0",
+    "lite-server": "^2.1.0",
+    "run-sequence": "^1.2.2"
   }
 }

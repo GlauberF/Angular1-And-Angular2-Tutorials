@@ -10,14 +10,15 @@
     angular
         .module('components.food')
         .component('foods', foods)
-        .config(function ($stateProvider, $urlRouterProvider) {
+        .config(['$stateProvider', '$urlRouterProvider',
+            function ($stateProvider, $urlRouterProvider) {
 
-            $urlRouterProvider.otherwise('/');
+                $urlRouterProvider.otherwise('/');
 
-            $stateProvider
-                .state('foods', {
-                    url: '/foods',
-                    component: 'foods',
-                });
-        });
+                $stateProvider
+                    .state('foods', {
+                        url: '/foods',
+                        component: 'foods',
+                    });
+            }]);
 })();

@@ -10,14 +10,15 @@
     angular
         .module('components.home')
         .component('homeComponent', homeComponent)
-        .config(function ($stateProvider, $urlRouterProvider) {
+        .config(['$stateProvider', '$urlRouterProvider',
+            function ($stateProvider, $urlRouterProvider) {
 
-            $urlRouterProvider.otherwise('/');
+                $urlRouterProvider.otherwise('/');
 
-            $stateProvider
-                .state('home', {
-                    url: '/',
-                    component: 'homeComponent',
-                });
-        });
+                $stateProvider
+                    .state('home', {
+                        url: '/',
+                        component: 'homeComponent',
+                    });
+            }]);
 })();

@@ -13,14 +13,14 @@
     angular
         .module('components.food')
         .component('foodDetail', foodDetail)
-        .config(function ($stateProvider, $urlRouterProvider) {
+        .config(['$stateProvider', '$urlRouterProvider',
+            function ($stateProvider, $urlRouterProvider) {
 
-            $urlRouterProvider.otherwise('/');
-
-            $stateProvider
-                .state('food', {
-                    url: '/foods/:id',
-                    component: 'foodDetail',
-                });
-        });
+                $urlRouterProvider.otherwise('/');
+                $stateProvider
+                    .state('food', {
+                        url: '/foods/:id',
+                        component: 'foodDetail',
+                    });
+            }]);
 })();
