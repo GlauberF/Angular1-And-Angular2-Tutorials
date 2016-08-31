@@ -7,7 +7,8 @@
             'components',
             'services',
             
-            'angular-loading-bar'
+            'angular-loading-bar',
+            'toastr'
         ])
         .constant('appSettings',
         {
