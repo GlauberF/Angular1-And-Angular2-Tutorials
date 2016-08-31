@@ -3,10 +3,6 @@
     'use strict';
 
     var shell = {
-        // bindings: {
-        //     contact: '<',
-        //     onSelect: '&'
-        // },
         templateUrl: 'app/components/shared/shell/shell.template.html'
     };
 

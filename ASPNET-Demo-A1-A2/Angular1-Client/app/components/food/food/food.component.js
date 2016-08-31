@@ -6,8 +6,7 @@
         bindings: {
             food: '<',
         },
-        templateUrl: 'app/components/food/food/food.template.html',
-        //controller: 'foodDetailController'
+        templateUrl: 'app/components/food/food/food.template.html'
     };
 
     angular
