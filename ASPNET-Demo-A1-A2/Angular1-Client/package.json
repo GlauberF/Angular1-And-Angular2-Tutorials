@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "scripts": {
     "start": "npm install && npm run lite",
-    "startProd": "npm install && gulp build:web && npm run lite -c lite-prod-config.js",
-    "lite": "lite-server"
+    "startProd": "npm install && gulp build:web && npm run liteProd",
+    "lite": "lite-server",
+    "liteProd": "lite-server --config=lite-prod-config.json"
   },
   "license": "ISC",
   "dependencies": {
