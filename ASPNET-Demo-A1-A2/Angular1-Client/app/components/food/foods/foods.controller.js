@@ -1,22 +1,22 @@
 (function () {
-    "use strict";
+    'use strict';
 
     angular
-        .module("components.food")
-        .controller("foodsController", foodsController);
+        .module('components.food')
+        .controller('foodsController', foodsController);
 
-    foodsController.$inject = ["foodService"];
+    foodsController.$inject = ['foodService'];
 
     function foodsController(foodService) {
         var ctrl = this;
 
         ctrl.foodAdded = function (event) {
-            console.log("foodAdded");
+            console.log('foodAdded');
             getFood();
         };
 
         ctrl.foodUpdated = function (event) {
-            console.log("foodUpdated");
+            console.log('foodUpdated');
             getFood();
         };
 

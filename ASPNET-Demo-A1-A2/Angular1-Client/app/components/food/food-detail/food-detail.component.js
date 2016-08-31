@@ -1,6 +1,6 @@
 (function () {
 
-    "use strict";
+    'use strict';
 
     var foodDetail = {
         bindings: {
@@ -15,7 +15,7 @@
         .component('foodDetail', foodDetail)
         .config(function ($stateProvider, $urlRouterProvider) {
 
-            $urlRouterProvider.otherwise("/");
+            $urlRouterProvider.otherwise('/');
 
             $stateProvider
                 .state('food', {

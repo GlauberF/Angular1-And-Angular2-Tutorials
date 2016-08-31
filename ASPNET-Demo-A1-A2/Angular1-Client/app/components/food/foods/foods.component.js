@@ -1,6 +1,6 @@
 (function () {
 
-    "use strict";
+    'use strict';
 
     var foods = {
         templateUrl: 'app/components/food/foods/foods.template.html',
@@ -12,7 +12,7 @@
         .component('foods', foods)
         .config(function ($stateProvider, $urlRouterProvider) {
 
-            $urlRouterProvider.otherwise("/");
+            $urlRouterProvider.otherwise('/');
 
             $stateProvider
                 .state('foods', {

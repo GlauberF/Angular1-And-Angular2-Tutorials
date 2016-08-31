@@ -1,15 +1,18 @@
 (function () {
 
-    "use strict";
+    'use strict';
 
     angular
         .module('AngularJsDemoApp', [
-            'components'
+            'components',
+            'services',
+            
+            'angular-loading-bar'
         ])
-        .constant("appSettings",
+        .constant('appSettings',
         {
-            //serverPath: "http://localhost:5655/"
-            serverPath:"http://foodapi4demo.azurewebsites.net/"
-        });;
+            //serverPath: 'http://localhost:5655/'
+            serverPath: 'http://foodapi4demo.azurewebsites.net/'
+        });
 
 } ());

@@ -1,11 +1,11 @@
 (function () {
-    "use strict";
+    'use strict';
 
     angular
-        .module("components.food")
-        .controller("foodListController", foodListController);
+        .module('components.food')
+        .controller('foodListController', foodListController);
 
-    foodListController.$inject = ["foodService"];
+    foodListController.$inject = ['foodService'];
 
     function foodListController(foodService) {
         var ctrl = this;
@@ -16,7 +16,7 @@
             ctrl.error = false;
             foodService.deleteFood(foodToDelete)
                 .then(function (response) {
-                    console.log("Success");
+                    console.log('Success');
 
                     ctrl.success = true;
 
@@ -28,7 +28,7 @@
                 },
                 function (response) {
                     ctrl.error = true;
-                    console.log("Error");
+                    console.log('Error');
                 }).then(function () {
                     ctrl.inProgress = false;
                 });

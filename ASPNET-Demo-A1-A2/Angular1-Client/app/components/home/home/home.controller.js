@@ -1,11 +1,11 @@
 (function () {
-    "use strict";
+    'use strict';
 
     angular
-        .module("components.home")
-        .controller("homeController", homeController);
+        .module('components.home')
+        .controller('homeController', homeController);
 
-    homeController.$inject = ["foodService"];
+    homeController.$inject = ['foodService'];
 
     function homeController(foodService) {
         var ctrl = this;

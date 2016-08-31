@@ -1,6 +1,6 @@
 (function () {
 
-    "use strict";
+    'use strict';
 
     var root = {
         templateUrl: 'app/root.html'

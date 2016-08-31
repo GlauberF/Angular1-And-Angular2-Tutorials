@@ -1,6 +1,6 @@
 (function () {
 
-    "use strict";
+    'use strict';
 
     var homeComponent = {
         // bindings: {
@@ -16,7 +16,7 @@
         .component('homeComponent', homeComponent)
         .config(function ($stateProvider, $urlRouterProvider) {
 
-            $urlRouterProvider.otherwise("/");
+            $urlRouterProvider.otherwise('/');
 
             $stateProvider
                 .state('home', {

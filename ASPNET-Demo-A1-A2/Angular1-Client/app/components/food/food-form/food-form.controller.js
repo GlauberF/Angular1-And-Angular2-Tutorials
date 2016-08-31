@@ -1,11 +1,11 @@
 (function () {
-    "use strict";
+    'use strict';
 
     angular
-        .module("components.food")
-        .controller("foodFormController", foodFormController);
+        .module('components.food')
+        .controller('foodFormController', foodFormController);
 
-    foodFormController.$inject = ["foodService"];
+    foodFormController.$inject = ['foodService'];
 
     function foodFormController(foodService) {
         var ctrl = this;
@@ -21,7 +21,7 @@
             ctrl.error = false;
 
             if (newFood.Id) {
-                console.log("foodUpdated");
+                console.log('foodUpdated');
                 foodService.updateFood(newFood)
                     .then(function () {
 
@@ -61,7 +61,7 @@
         };
 
         var handleError = function (response) {
-            var errors = "";
+            var errors = '';
 
             if (response.data && response.data.ModelState) {
                 for (var key in response.data.ModelState) {

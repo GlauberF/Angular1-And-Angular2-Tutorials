@@ -1,17 +1,17 @@
 ﻿(function () {
-    "use strict";
+    'use strict';
 
     angular
-        .module("AngularJsDemoApp")
-        .factory("foodService", foodService);
+        .module('services')
+        .factory('foodService', foodService);
 
-    foodService.$inject = ["$http", "appSettings"];
+    foodService.$inject = ['$http', 'appSettings'];
 
     /* @ngInject */
     function foodService($http, appSettings) {
 
-        //var url = appSettings.serverPath + "api/food/";
-        var url = "api/foodItems.json";
+        var url = appSettings.serverPath + 'api/food/';
+        //var url = 'api/foodItems.json';
 
         var _getAllFood = function () {
             return $http.get(url);
@@ -26,7 +26,6 @@
         };
 
         var _addFood = function (newFoodToAdd) {
-
             newFoodToAdd.created = new Date();
 
             return $http.post(url, newFoodToAdd);
