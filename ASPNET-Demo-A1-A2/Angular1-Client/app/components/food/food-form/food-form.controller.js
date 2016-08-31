@@ -17,8 +17,6 @@
         var addOrUpdateFood = function (newFood) {
 
             ctrl.inProgress = true;
-            ctrl.success = false;
-            ctrl.error = false;
 
             if (newFood.Id) {
                 console.log('foodUpdated');
@@ -31,11 +29,9 @@
                             }
                         });
                         newFood = {};
-                        ctrl.success = true;
                         toastr.success('Food Updated');
                     },
                     function (response) {
-                        ctrl.error = true;
                         toastr.error('Food Not Updated');
                         handleError(response);
                     }).then(function () {
@@ -50,12 +46,10 @@
                             }
                         });
                         newFood = {};
-                        ctrl.success = true;
                         toastr.success('Food Added');
                     },
                     function (response) {
                         toastr.error('Food Not Added');
-                        ctrl.error = true;
                         handleError(response);
                     }).then(function () {
                         ctrl.inProgress = false;
