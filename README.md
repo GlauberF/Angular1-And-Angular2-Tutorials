@@ -1,4 +1,4 @@
-# Angular 1 and Angular 2 Tutorial
+# Angular 1 and Angular 2 Workshops
 
 This repository contains material for getting started with Angular 1 and Angular 2 (both repos is currently worked on - mainly on Angular 1 until Angular 2 is stable and released). They should provide a code base where you can start on learning or teaching Angular.
 
@@ -8,9 +8,11 @@ You can start all repositories with `npm start`. This will execute an `npm insta
 
 ### Demo
 
-You can see an AngularJs Demo with all the techniques combined here
+You can see an AngularJs Demo with all the techniques combined here (running on Azure)
 
 [Demo](http://foodapi4demo.azurewebsites.net/)
+
+![DemoGif](./_gitAssets/foodApiAzure.gif)
 
 ### Chapters
 

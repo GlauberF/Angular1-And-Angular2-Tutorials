@@ -3,6 +3,10 @@ body {
   padding-bottom: 30px;
 }
         
-        .starter-template {
-            text-align: center;
-        }
+.starter-template {
+    text-align: center;
+}
+
+#loading-bar .bar {
+  background: whitesmoke;
+}
