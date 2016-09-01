@@ -1,8 +1,4 @@
-# Angular 1 and Angular 2 Tutorial
-
-This repository contains material for getting started with Angular 1 and Angular 2 (both repos is currently worked on - mainly on Angular 1 until Angular 2 is stable and released).
-
-## Angular 1
+# Tutorial for Angular 1
 
 You can start all repositories with `npm start`. This will execute an `npm install` and start a lite-server afterwards. A browser should open automatically.
 
@@ -28,11 +24,3 @@ You can see an AngularJs Demo with all the techniques combined here
 12) [Routing](#)
 13) [Testing](#)
 14) [Best Practices](#)
-
-<hr/>
-
-## Angular 2
-
-All Angular 2 repositories can be started with
-
-<pre>npm start</pre>
