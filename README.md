@@ -1,6 +1,6 @@
 # Angular 1 and Angular 2 Tutorial
 
-This repository contains material for getting started with Angular 1 and Angular 2 (both repos is currently worked on - mainly on Angular 1 until Angular 2 is stable and released).
+This repository contains material for getting started with Angular 1 and Angular 2 (both repos is currently worked on - mainly on Angular 1 until Angular 2 is stable and released). They should provide a code base where you can start on learning or teaching Angular.
 
 ## Angular 1
 
