@@ -16,8 +16,6 @@
 
         var addOrUpdateFood = function (newFood) {
 
-            ctrl.inProgress = true;
-
             if (newFood.Id) {
                 console.log('foodUpdated');
                 foodService.updateFood(newFood)
@@ -35,7 +33,7 @@
                         toastr.error('Food Not Updated');
                         handleError(response);
                     }).then(function () {
-                        ctrl.inProgress = false;
+                        // finally
                     });
             } else {
                 foodService.addFood(newFood)
@@ -51,8 +49,6 @@
                     function (response) {
                         toastr.error('Food Not Added');
                         handleError(response);
-                    }).then(function () {
-                        ctrl.inProgress = false;
                     });
             }
         };

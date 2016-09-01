@@ -4,6 +4,7 @@
   "scripts": {
     "start": "npm install && npm run lite",
     "startProd": "npm install && gulp build:web && npm run liteProd",
+    "buildProd": "npm install && gulp build:web",
     "lite": "lite-server",
     "liteProd": "lite-server --config=lite-prod-config.json"
   },
