@@ -16,6 +16,7 @@
                 .then(
                 function (result) {
                     var allFood = result.data;
+                    alert(result.data);
                     var randomIndex = Math.floor(Math.random() * allFood.length);
                     ctrl.selectedFood = allFood[randomIndex];
                     ctrl.lastUpdatedDate = new Date();
