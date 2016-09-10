@@ -48,11 +48,13 @@
 
             <h3 ng-bind="foodItem.calories"></h3>
             <h3 ng-bind="foodItems[1]"></h3>
+            <h3 ng-bind="dateForFilter | myCustomFilter"></h3>
+            <h3 ng-bind="dateForFilter | myCustomFilter : foodItem.calories"></h3>
             <h3 ng-bind="dateForFilter | date"></h3>
             <h3 ng-bind="dateForFilter | date:'medium'"></h3>
             <h3 ng-bind="dateForFilter | date:'MMM d, y h:mm:ss a'"></h3>
             
-            <h3 ng-bind="foodItems | limitTo:2"></h3>
+            <h3 ng-bind="foodItems | limitTo:1"></h3>
         </div>
     </div>
     <script src="node_modules/angular/angular.js"></script>
