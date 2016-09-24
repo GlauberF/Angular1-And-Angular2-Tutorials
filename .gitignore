@@ -33,3 +33,10 @@ Angular1-Tutorial/00_HelloWorld/node_modules/
 
 ASPNET-Demo-A1-A2/Server/.vs/config/applicationhost.config
 ASPNET-Demo-A1-A2/Server/.vs/
+ASPNET-Demo-A1-A2/Server/ASP.NET/.vs
+ASPNET-Demo-A1-A2/Server/ASP.NET/FoodAPI/bin
+ASPNET-Demo-A1-A2/Server/ASP.NET/FoodAPI/obj
+ASPNET-Demo-A1-A2/Server/ASP.NET/packages
+ASPNET-Demo-A1-A2/Server/ASP.NETCore/src/FoodAPICore/bin
+ASPNET-Demo-A1-A2/Server/ASP.NETCore/src/FoodAPICore/obj
+ASPNET-Demo-A1-A2/Server/ASP.NETCore/.vs
