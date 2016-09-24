@@ -1,6 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { CORE_DIRECTIVES } from '@angular/common';
-import { RouteConfig, ROUTER_DIRECTIVES } from '@angular/router-deprecated';
 import { FoodFormComponent } from '../foodForm/foodForm.component';
 import { FoodListComponent } from '../foodList/foodList.component';
 import { FoodDetailsComponent } from '../foodDetails/foodDetails.component';
@@ -10,7 +8,6 @@ import { FoodItem } from '../../models/foodItem';
 @Component({
     selector: 'mainFood-component',
     providers: [FoodDataService],
-    directives: [ROUTER_DIRECTIVES, CORE_DIRECTIVES, FoodFormComponent, FoodListComponent],
     templateUrl: 'app/components/mainFood/mainFood.component.html'
 })
 

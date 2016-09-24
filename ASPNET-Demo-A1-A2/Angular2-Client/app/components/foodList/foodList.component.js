@@ -9,9 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var common_1 = require('@angular/common');
 var food_dataservice_1 = require('../../shared/food.dataservice');
-var router_deprecated_1 = require('@angular/router-deprecated');
 var FoodListComponent = (function () {
     function FoodListComponent(_foodDataService) {
         var _this = this;
@@ -37,7 +35,6 @@ var FoodListComponent = (function () {
     FoodListComponent = __decorate([
         core_1.Component({
             selector: 'foodList-component',
-            directives: [router_deprecated_1.ROUTER_DIRECTIVES, common_1.CORE_DIRECTIVES],
             templateUrl: 'app/components/foodList/foodList.component.html'
         }), 
         __metadata('design:paramtypes', [food_dataservice_1.FoodDataService])

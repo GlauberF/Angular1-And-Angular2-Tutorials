@@ -2,7 +2,7 @@
 
     <div class="form-group">
         <label for="exampleInputEmail1">Name</label>
-        <input type="text" class="form-control" id="exampleInputEmail1" ngControl="foodName" placeholder="Foodname" [(ngModel)]="foodItem.Name"
+        <input type="text" name="foodItemName" class="form-control" id="exampleInputEmail1" ngControl="foodName" placeholder="Foodname" [(ngModel)]="foodItem.Name"
         required>
         <div *ngIf="f?.controls?.foodName?.hasError('required') && !f?.controls?.foodName?.pending && f?.controls?.foodName?.touched">
             Pflichtfeld!
@@ -11,7 +11,7 @@
     <div class="form-group">
         <label for="exampleInputEmail1">Calories</label>
         <input type="number" class="form-control" id="exampleInputEmail1" ngControl="calories" placeholder="Calories" [(ngModel)]="foodItem.Calories"
-        required isNumber isInRange>
+        required isNumber isInRange name="foodItemCalories">
         <div *ngIf="f?.controls?.calories?.hasError('required') && f?.controls?.calories?.touched">
             Pflichtfeld!
         </div>

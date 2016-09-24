@@ -9,10 +9,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var common_1 = require('@angular/common');
-var router_deprecated_1 = require('@angular/router-deprecated');
-var foodForm_component_1 = require('../foodForm/foodForm.component');
-var foodList_component_1 = require('../foodList/foodList.component');
 var food_dataservice_1 = require('../../shared/food.dataservice');
 var foodItem_1 = require('../../models/foodItem');
 var MainFoodComponent = (function () {
@@ -40,7 +36,6 @@ var MainFoodComponent = (function () {
         core_1.Component({
             selector: 'mainFood-component',
             providers: [food_dataservice_1.FoodDataService],
-            directives: [router_deprecated_1.ROUTER_DIRECTIVES, common_1.CORE_DIRECTIVES, foodForm_component_1.FoodFormComponent, foodList_component_1.FoodListComponent],
             templateUrl: 'app/components/mainFood/mainFood.component.html'
         }), 
         __metadata('design:paramtypes', [food_dataservice_1.FoodDataService])

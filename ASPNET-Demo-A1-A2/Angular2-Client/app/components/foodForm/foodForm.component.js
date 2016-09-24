@@ -9,12 +9,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var common_1 = require('@angular/common');
-var router_deprecated_1 = require('@angular/router-deprecated');
 var food_dataservice_1 = require('../../shared/food.dataservice');
 var foodItem_1 = require('../../models/foodItem');
-var integer_range_validator_directive_1 = require('../../validators/integer.range.validator.directive');
-var integer_number_validator_directive_1 = require('../../validators/integer.number.validator.directive');
 var FoodFormComponent = (function () {
     function FoodFormComponent(_foodDataService) {
         var _this = this;
@@ -56,7 +52,6 @@ var FoodFormComponent = (function () {
     FoodFormComponent = __decorate([
         core_1.Component({
             selector: 'foodForm-component',
-            directives: [router_deprecated_1.ROUTER_DIRECTIVES, common_1.CORE_DIRECTIVES, integer_range_validator_directive_1.IsInRangeValidatorDirective, integer_number_validator_directive_1.IsNumberValidatorDirective],
             templateUrl: 'app/components/foodForm/foodForm.component.html'
         }), 
         __metadata('design:paramtypes', [food_dataservice_1.FoodDataService])

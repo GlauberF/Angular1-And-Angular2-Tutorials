@@ -1,12 +1,9 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
-import { CORE_DIRECTIVES } from '@angular/common';
 import { FoodDataService } from '../../shared/food.dataservice';
-import { RouteConfig, ROUTER_DIRECTIVES } from '@angular/router-deprecated';
 import { FoodItem } from '../../models/foodItem';
 
 @Component({
     selector: 'foodList-component',
-    directives: [ROUTER_DIRECTIVES, CORE_DIRECTIVES],
     templateUrl: 'app/components/foodList/foodList.component.html'
 })
 

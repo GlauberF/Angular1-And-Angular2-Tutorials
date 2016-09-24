@@ -9,15 +9,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var integer_validator_1 = require('./integer.validator');
-var common_1 = require('@angular/common');
 var IsNumberValidatorDirective = (function () {
     function IsNumberValidatorDirective() {
     }
     IsNumberValidatorDirective = __decorate([
         core_1.Directive({
-            selector: 'input[isNumber]',
-            providers: [new core_1.Provider(common_1.NG_VALIDATORS, { useValue: integer_validator_1.IntegerValidator.isNumber, multi: true })]
+            selector: 'input[isNumber]'
         }), 
         __metadata('design:paramtypes', [])
     ], IsNumberValidatorDirective);
