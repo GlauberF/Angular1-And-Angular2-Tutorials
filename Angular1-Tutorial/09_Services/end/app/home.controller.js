@@ -9,7 +9,7 @@
             
         var vm = this;
 
-        vm.value = "Services? Services!!"
+        vm.value = "Services? Services!!";
 
         vm.providerResult = myFirstproviderService.sayHello();
         vm.serviceResult = myFirstServiceService.sayHello();
@@ -19,13 +19,13 @@
             function (response) {
                 //success asynchron
 
-                var exampleHeader = "Content-Type"
+                var exampleHeader = "Content-Type";
 
-                // alert(JSON.stringify(response.data));
-                // alert(response.status);
-                // alert(response.headers(exampleHeader));
-                // alert(JSON.stringify(response.config));
-                // alert(response.statusText);
+                alert(JSON.stringify(response.data));
+                alert(response.status);
+                alert(response.headers(exampleHeader));
+                alert(JSON.stringify(response.config));
+                alert(response.statusText);
             },
             function (error) {
                 //error asynchron

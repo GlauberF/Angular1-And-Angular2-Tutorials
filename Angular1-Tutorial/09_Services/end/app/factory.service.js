@@ -9,7 +9,7 @@
 
         return {
             sayHello: _sayHello
-        }
+        };
     }
 
     angular
