@@ -1,10 +1,8 @@
 import { Directive, Provider } from '@angular/core';
 import { IntegerValidator } from './integer.validator';
-import { NG_VALIDATORS } from '@angular/common';
 
 @Directive({
-    selector: 'input[isNumber]',
-    providers: [new Provider(NG_VALIDATORS, { useValue: IntegerValidator.isNumber, multi: true })]
+    selector: 'input[isNumber]'
 })
 
 export class IsNumberValidatorDirective {

@@ -1,17 +1,5 @@
 "use strict";
 var platform_browser_dynamic_1 = require('@angular/platform-browser-dynamic');
-var app_component_1 = require('./app.component');
-var common_1 = require('@angular/common');
-var http_1 = require('@angular/http');
-var app_configuration_1 = require('./shared/app.configuration');
-var food_dataservice_1 = require('./shared/food.dataservice');
-var router_deprecated_1 = require('@angular/router-deprecated');
-platform_browser_dynamic_1.bootstrap(app_component_1.AppComponent, [
-    http_1.HTTP_PROVIDERS,
-    router_deprecated_1.ROUTER_PROVIDERS,
-    app_configuration_1.Configuration,
-    food_dataservice_1.FoodDataService,
-    { provide: common_1.LocationStrategy, useClass: common_1.HashLocationStrategy },
-    { provide: common_1.APP_BASE_HREF, useValue: '/' },
-]);
+var app_module_1 = require('./app.module');
+platform_browser_dynamic_1.platformBrowserDynamic().bootstrapModule(app_module_1.AppModule);
 //# sourceMappingURL=main.js.map

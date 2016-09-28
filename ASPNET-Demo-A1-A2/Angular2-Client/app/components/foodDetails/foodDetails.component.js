@@ -9,33 +9,33 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var common_1 = require('@angular/common');
-var router_deprecated_1 = require('@angular/router-deprecated');
 var food_dataservice_1 = require('../../shared/food.dataservice');
 var foodItem_1 = require('../../models/foodItem');
+var router_1 = require('@angular/router');
 var FoodDetailsComponent = (function () {
-    function FoodDetailsComponent(_routeparams, _foodDataService) {
-        this._routeparams = _routeparams;
+    function FoodDetailsComponent(_route, _foodDataService) {
+        this._route = _route;
         this._foodDataService = _foodDataService;
         this.selectedFoodItem = new foodItem_1.FoodItem();
     }
     FoodDetailsComponent.prototype.ngOnInit = function () {
         var _this = this;
-        var foodId = this._routeparams.get('foodId');
-        this._foodDataService
-            .GetSingleFood(parseInt(foodId))
-            .subscribe(function (foodItem) {
-            _this.selectedFoodItem = foodItem;
-        }, function (error) { return console.log(error); });
+        this._route.params.forEach(function (params) {
+            var foodId = +params['foodId']; // (+) converts string 'id' to a number
+            _this._foodDataService
+                .GetSingleFood(foodId)
+                .subscribe(function (foodItem) {
+                _this.selectedFoodItem = foodItem;
+            }, function (error) { return console.log(error); });
+        });
     };
     FoodDetailsComponent = __decorate([
         core_1.Component({
             selector: 'foodDetails-component',
-            directives: [router_deprecated_1.ROUTER_DIRECTIVES, common_1.CORE_DIRECTIVES],
             providers: [food_dataservice_1.FoodDataService],
             templateUrl: 'app/components/foodDetails/foodDetails.component.html'
         }), 
-        __metadata('design:paramtypes', [router_deprecated_1.RouteParams, food_dataservice_1.FoodDataService])
+        __metadata('design:paramtypes', [router_1.ActivatedRoute, food_dataservice_1.FoodDataService])
     ], FoodDetailsComponent);
     return FoodDetailsComponent;
 }());

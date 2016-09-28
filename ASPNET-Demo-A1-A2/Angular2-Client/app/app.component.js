@@ -9,31 +9,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var router_deprecated_1 = require('@angular/router-deprecated');
 var common_1 = require('@angular/common');
-var home_component_1 = require('./components/home/home.component');
 var app_configuration_1 = require('./shared/app.configuration');
-var food_component_1 = require('./components/food/food.component');
 var AppComponent = (function () {
     function AppComponent(_configuration, _location) {
         this._configuration = _configuration;
         this._location = _location;
         this.title = _configuration.title;
     }
-    AppComponent.prototype.isActive = function (path) {
-        return this._location.path() === path;
-    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'foodChooser-app',
-            directives: [router_deprecated_1.ROUTER_DIRECTIVES],
-            providers: [router_deprecated_1.ROUTER_PROVIDERS, app_configuration_1.Configuration],
             templateUrl: 'app/app.component.html'
-        }),
-        router_deprecated_1.RouteConfig([
-            { path: '/home', name: 'Home', component: home_component_1.HomeComponent, useAsDefault: true },
-            { path: '/food/...', name: 'Food', component: food_component_1.FoodComponent }
-        ]), 
+        }), 
         __metadata('design:paramtypes', [app_configuration_1.Configuration, common_1.Location])
     ], AppComponent);
     return AppComponent;

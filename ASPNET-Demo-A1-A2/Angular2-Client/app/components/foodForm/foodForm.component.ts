@@ -1,6 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { CORE_DIRECTIVES } from '@angular/common';
-import { RouteConfig, ROUTER_DIRECTIVES } from '@angular/router-deprecated';
 import { FoodDataService } from '../../shared/food.dataservice';
 import { FoodItem } from '../../models/foodItem';
 import { NgForm }    from '@angular/forms';
@@ -9,7 +7,6 @@ import { IsNumberValidatorDirective } from '../../validators/integer.number.vali
 
 @Component({
     selector: 'foodForm-component',
-    directives: [ROUTER_DIRECTIVES, CORE_DIRECTIVES, IsInRangeValidatorDirective, IsNumberValidatorDirective],
     templateUrl: 'app/components/foodForm/foodForm.component.html'
 })
 
