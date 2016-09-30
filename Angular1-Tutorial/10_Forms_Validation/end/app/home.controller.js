@@ -9,15 +9,15 @@
 
         vm.submitForm = function () {
             alert("You sent " + vm.submittedUserName);
-        }
+        };
 
         vm.submitValidatedForm = function () {
             alert("You sent " + vm.validatedUserName);
-        }
+        };
 
         vm.submitNgMessageValidatedForm = function () {
             alert("You sent " + vm.validatedUserName);
-        }
+        };
     }
 
     angular
