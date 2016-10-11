@@ -8,14 +8,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var __param = (this && this.__param) || function (paramIndex, decorator) {
-    return function (target, key) { decorator(target, key, paramIndex); }
-};
 var core_1 = require('@angular/core');
 var forms_1 = require('@angular/forms');
 var IsNumberValidator = (function () {
-    function IsNumberValidator(isNumber) {
-        this.isNumber = isNumber;
+    function IsNumberValidator() {
     }
     IsNumberValidator.prototype.validate = function (c) {
         if (isNaN(+c.value)) {
@@ -33,9 +29,8 @@ var IsNumberValidator = (function () {
             providers: [
                 { provide: forms_1.NG_VALIDATORS, useExisting: core_1.forwardRef(function () { return IsNumberValidator; }), multi: true }
             ]
-        }),
-        __param(0, core_1.Attribute('isNumber')), 
-        __metadata('design:paramtypes', [String])
+        }), 
+        __metadata('design:paramtypes', [])
     ], IsNumberValidator);
     return IsNumberValidator;
 }());

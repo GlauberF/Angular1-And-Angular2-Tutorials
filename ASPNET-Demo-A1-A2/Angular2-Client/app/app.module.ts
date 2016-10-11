@@ -15,8 +15,6 @@ import { FoodFormComponent } from './components/foodForm/foodForm.component';
 
 import { FoodDataService } from './shared/food.dataservice';
 
-import { IsNumberValidator } from './validators/isNumber.validator';
-import { IsInRangeValidator } from './validators/isInRange.validator';
 
 @NgModule({
     imports: [

@@ -1,5 +1,5 @@
 import { Directive, forwardRef, Attribute } from '@angular/core';
-import { Validator, AbstractControl, NG_VALIDATORS, FormControl } from '@angular/forms';
+import { Validator, NG_VALIDATORS, FormControl } from '@angular/forms';
 
 @Directive({
     selector: '[isInRange][formControlName],[isInRange][formControl],[isInRange][ngModel]',
