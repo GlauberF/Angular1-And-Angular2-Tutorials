@@ -9,16 +9,27 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var IsInRangeValidatorDirective = (function () {
-    function IsInRangeValidatorDirective() {
+var forms_1 = require('@angular/forms');
+var IsInRangeValidator = (function () {
+    function IsInRangeValidator() {
     }
-    IsInRangeValidatorDirective = __decorate([
+    IsInRangeValidator.prototype.validate = function (c) {
+        // self value (e.g. retype password)
+        if (c.value > 2147483647 || c.value < 0) {
+            return { isInRange: false };
+        }
+        return null;
+    };
+    IsInRangeValidator = __decorate([
         core_1.Directive({
-            selector: 'input[isInRange]',
+            selector: '[isInRange][formControlName],[isInRange][formControl],[isInRange][ngModel]',
+            providers: [
+                { provide: forms_1.NG_VALIDATORS, useExisting: core_1.forwardRef(function () { return IsInRangeValidator; }), multi: true }
+            ]
         }), 
         __metadata('design:paramtypes', [])
-    ], IsInRangeValidatorDirective);
-    return IsInRangeValidatorDirective;
+    ], IsInRangeValidator);
+    return IsInRangeValidator;
 }());
-exports.IsInRangeValidatorDirective = IsInRangeValidatorDirective;
-//# sourceMappingURL=integer.range.validator.directive.js.map
+exports.IsInRangeValidator = IsInRangeValidator;
+//# sourceMappingURL=isInRange.validator.js.map

@@ -1,9 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FoodDataService } from '../../shared/food.dataservice';
 import { FoodItem } from '../../models/foodItem';
-import { NgForm }    from '@angular/forms';
-import { IsInRangeValidatorDirective } from '../../validators/integer.range.validator.directive';
-import { IsNumberValidatorDirective } from '../../validators/integer.number.validator.directive';
+import { NgForm } from '@angular/forms';
 
 @Component({
     selector: 'foodForm-component',

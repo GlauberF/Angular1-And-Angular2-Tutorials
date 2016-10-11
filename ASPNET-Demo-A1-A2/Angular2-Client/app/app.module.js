@@ -15,6 +15,7 @@ var app_configuration_1 = require('./shared/app.configuration');
 var app_routes_1 = require('./app.routes');
 var http_1 = require('@angular/http');
 var forms_1 = require('@angular/forms');
+var shared_module_1 = require('./modules/shared.module');
 var home_component_1 = require('./components/home/home.component');
 var mainFood_component_1 = require('./components/mainFood/mainFood.component');
 var foodDetails_component_1 = require('./components/foodDetails/foodDetails.component');
@@ -31,7 +32,8 @@ var AppModule = (function () {
                 app_routes_1.routing,
                 http_1.HttpModule,
                 http_1.JsonpModule,
-                forms_1.FormsModule
+                forms_1.FormsModule,
+                shared_module_1.SharedModule
             ],
             declarations: [
                 app_component_1.AppComponent,

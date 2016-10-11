@@ -5,6 +5,7 @@ import { Configuration } from './shared/app.configuration';
 import { routing, appRoutingProviders } from './app.routes';
 import { HttpModule, JsonpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
+import { SharedModule } from './modules/shared.module';
 
 import { HomeComponent } from  './components/home/home.component';
 import { MainFoodComponent } from  './components/mainFood/mainFood.component';
@@ -14,13 +15,17 @@ import { FoodFormComponent } from './components/foodForm/foodForm.component';
 
 import { FoodDataService } from './shared/food.dataservice';
 
+import { IsNumberValidator } from './validators/isNumber.validator';
+import { IsInRangeValidator } from './validators/isInRange.validator';
+
 @NgModule({
     imports: [
         BrowserModule,
         routing,
         HttpModule,
         JsonpModule,
-        FormsModule
+        FormsModule,
+        SharedModule
     ],
 
     declarations: [
