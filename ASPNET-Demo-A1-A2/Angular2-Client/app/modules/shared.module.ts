@@ -15,7 +15,7 @@ import { IsInRangeValidator } from '../validators/isInRange.validator';
         // Components & directives
 
         IsNumberValidator,
-         IsInRangeValidator
+        IsInRangeValidator
     ],
 
     providers: [
