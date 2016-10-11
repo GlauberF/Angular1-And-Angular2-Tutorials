@@ -28,9 +28,6 @@ namespace FoodAPI
             var cors = new EnableCorsAttribute("*", "*", "*");
             config.EnableCors(cors);
 
-            config.Formatters.Clear();
-            config.Formatters.Add(new JsonMediaTypeFormatter());
-
             Mapper.Initialize(mapper =>
             {
                 mapper.CreateMap<FoodItem, FoodItemViewModel>().ReverseMap();

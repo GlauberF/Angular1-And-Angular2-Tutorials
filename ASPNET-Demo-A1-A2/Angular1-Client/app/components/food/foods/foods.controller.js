@@ -12,6 +12,7 @@
 
         ctrl.$onInit = function () {
             getFood();
+            toastr.success('Food loaded!', 'Success!');
         };
 
         ctrl.foodAdded = function (event) {
@@ -20,7 +21,9 @@
                 .then(function (response) {
                     getFood();
                     ctrl.foodToEdit = {};
+                    toastr.success('Food added!', 'Success!');
                 }, function (errors) {
+                    toastr.error('Oh snap...!');
                     handleError(errors);
                 });
         };
@@ -31,7 +34,9 @@
                 .then(function (response) {
                     getFood();
                     ctrl.foodToEdit = {};
+                    toastr.success('Food updated!', 'Success!');
                 }, function (errors) {
+                    toastr.error('Oh snap...!');
                     handleError(errors);
                 });
         };
@@ -42,7 +47,9 @@
             foodService.deleteFood(event.food)
                 .then(function (response) {
                     getFood();
+                    toastr.success('Food deleted!', 'Success!');
                 }, function (errors) {
+                    toastr.error('Oh snap...!');
                     handleError(errors);
                 });
         };
@@ -52,7 +59,6 @@
         };
 
         var getFood = function () {
-            ctrl.inProgress = true;
             foodService.getAllFood().then(
                 function (response) {
                     console.log(response.data);
@@ -60,9 +66,8 @@
                 },
                 function (response) {
                     //Error
+                    toastr.error('Oh snap...!');
                     console.log(response);
-                }).finally(function () {
-                    ctrl.inProgress = false;
                 });
         };
 
