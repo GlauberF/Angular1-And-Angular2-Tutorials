@@ -12,7 +12,7 @@
         ])
         .constant('appSettings',
         {
-            serverPath: 'http://localhost:6410/'
+            serverPath: 'http://localhost:29775/'
         })
         .config(['cfpLoadingBarProvider', function (cfpLoadingBarProvider) {
             cfpLoadingBarProvider.includeSpinner = false;

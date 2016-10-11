@@ -10,18 +10,41 @@
     function foodsController(foodService, toastr) {
         var ctrl = this;
 
-        ctrl.foodAdded = function (event) {
+        ctrl.$onInit = function () {
             getFood();
+        };
+
+        ctrl.foodAdded = function (event) {
+            console.log(event.food);
+            foodService.addFood(event.food)
+                .then(function (response) {
+                    getFood();
+                    ctrl.foodToEdit = {};
+                }, function (errors) {
+                    handleError(errors);
+                });
         };
 
         ctrl.foodUpdated = function (event) {
             ctrl.foods = [];
-            getFood();
+            foodService.updateFood(event.food)
+                .then(function (response) {
+                    getFood();
+                    ctrl.foodToEdit = {};
+                }, function (errors) {
+                    handleError(errors);
+                });
         };
 
-        ctrl.foodDeleted = function (foodToDelete) {
+        ctrl.foodDeleted = function (event) {
             ctrl.foods = [];
-            getFood();
+
+            foodService.deleteFood(event.food)
+                .then(function (response) {
+                    getFood();
+                }, function (errors) {
+                    handleError(errors);
+                });
         };
 
         ctrl.setFoodItemForEdit = function (event) {
@@ -29,10 +52,10 @@
         };
 
         var getFood = function () {
-            
             ctrl.inProgress = true;
             foodService.getAllFood().then(
                 function (response) {
+                    console.log(response.data);
                     ctrl.foods = response.data;
                 },
                 function (response) {
@@ -43,6 +66,17 @@
                 });
         };
 
-        getFood();
+        var handleError = function (response) {
+            var errors = '';
+
+            if (response.data && response.data.ModelState) {
+                for (var key in response.data.ModelState) {
+                    if (response.data.ModelState.hasOwnProperty(key)) {
+                        errors += response.data.ModelState[key] + '\r\n';
+                    }
+                }
+            }
+            console.log(errors);
+        };
     }
 })();

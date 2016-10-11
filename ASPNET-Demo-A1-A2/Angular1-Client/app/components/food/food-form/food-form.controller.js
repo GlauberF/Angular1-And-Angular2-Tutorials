@@ -5,65 +5,31 @@
         .module('components.food')
         .controller('foodFormController', foodFormController);
 
-    foodFormController.$inject = ['foodService', 'toastr'];
+    foodFormController.$inject = [];
 
-    function foodFormController(foodService, toastr) {
+    function foodFormController() {
         var ctrl = this;
 
+        ctrl.$onChanges = function (changes) {
+            if (changes.food) {
+                this.food = Object.assign({}, changes.food.currentValue);
+            }
+        };
+
         ctrl.saveFood = function () {
-            addOrUpdateFood(ctrl.food);
-        };
-
-        var addOrUpdateFood = function (newFood) {
-
-            if (newFood.Id) {
-                console.log('foodUpdated');
-                foodService.updateFood(newFood)
-                    .then(function () {
-
-                        ctrl.onUpdate({
-                            $event: {
-                                food: newFood
-                            }
-                        });
-                        newFood = {};
-                        toastr.success('Food Updated');
-                    },
-                    function (response) {
-                        toastr.error('Food Not Updated');
-                        handleError(response);
-                    }).then(function () {
-                        // finally
-                    });
-            } else {
-                foodService.addFood(newFood)
-                    .then(function () {
-                        ctrl.onAdd({
-                            $event: {
-                                food: newFood
-                            }
-                        });
-                        newFood = {};
-                        toastr.success('Food Added');
-                    },
-                    function (response) {
-                        toastr.error('Food Not Added');
-                        handleError(response);
-                    });
-            }
-        };
-
-        var handleError = function (response) {
-            var errors = '';
-
-            if (response.data && response.data.ModelState) {
-                for (var key in response.data.ModelState) {
-                    if (response.data.ModelState.hasOwnProperty(key)) {
-                        errors += response.data.ModelState[key] + '\r\n';
+            if (ctrl.food.id) {
+                ctrl.onUpdate({
+                    $event: {
+                        food: ctrl.food
                     }
-                }
+                });
+            } else {
+                ctrl.onAdd({
+                    $event: {
+                        food: ctrl.food
+                    }
+                });
             }
-            console.log(errors);
         };
     }
 })();

@@ -10,7 +10,7 @@
     /* @ngInject */
     function foodService($http, appSettings) {
 
-        var url = appSettings.serverPath + 'api/values/';
+        var url = appSettings.serverPath + 'api/food/';
         //var url = 'api/foodItems.json';
 
         var _getAllFood = function () {
@@ -22,17 +22,17 @@
         };
 
         var _updateFood = function (foodToUpdate) {
-            return $http.put(url + foodToUpdate.Id, foodToUpdate);
+            return $http.put(url + foodToUpdate.id, foodToUpdate);
         };
 
         var _addFood = function (newFoodToAdd) {
             newFoodToAdd.created = new Date();
-
+            console.log(newFoodToAdd);
             return $http.post(url, newFoodToAdd);
         };
 
         var _deleteFood = function (foodToDelete) {
-            return $http.delete(url + foodToDelete.Id);
+            return $http.delete(url + foodToDelete.id);
         };
 
         return {

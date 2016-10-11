@@ -9,10 +9,13 @@
 
     function foodDetailController($stateParams, foodService) {
         var ctrl = this;
-        foodService.getSingleFood($stateParams.id)
-            .then(function (response) {
-                ctrl.food = response.data;
-                console.log(ctrl.food);
-            });
+
+        ctrl.$onInit = function () {
+            foodService.getSingleFood($stateParams.id)
+                .then(function (response) {
+                    ctrl.food = response.data;
+                    console.log(ctrl.food);
+                });
+        };
     }
 })();

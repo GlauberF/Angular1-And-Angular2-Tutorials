@@ -10,11 +10,14 @@
     function homeController(foodService) {
         var ctrl = this;
 
+        ctrl.$onInit = function () {
+            getFood();
+        };
+
         var getFood = function () {
             foodService
                 .getAllFood()
-                .then(
-                function (result) {
+                .then(function (result) {
                     var allFood = result.data;
                     var randomIndex = Math.floor(Math.random() * allFood.length);
                     ctrl.selectedFood = allFood[randomIndex];
@@ -29,6 +32,5 @@
         };
 
         ctrl.getFood = getFood;
-        getFood();
     }
 })();

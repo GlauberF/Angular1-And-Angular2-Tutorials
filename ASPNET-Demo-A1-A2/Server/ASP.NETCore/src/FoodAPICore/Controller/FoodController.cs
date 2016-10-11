@@ -33,7 +33,7 @@ namespace FoodAPICore.Controller
         }
 
         [HttpPost]
-        public IActionResult Add(FoodItem foodItem)
+        public IActionResult Add([FromBody] FoodItem foodItem)
         {
             try
             {

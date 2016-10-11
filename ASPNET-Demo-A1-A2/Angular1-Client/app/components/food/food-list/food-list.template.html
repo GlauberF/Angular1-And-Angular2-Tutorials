@@ -21,15 +21,15 @@
 
     <tr data-ng-repeat="food in $ctrl.foods | orderBy:sortType:sortReverse | filter:$ctrl.searchPattern track by $index">
         <td class="text-left">
-            {{food.Name}}
+            {{food.name}}
         </td>
         <td class="text-left">
-            {{food.Calories}}
+            {{food.calories}}
         </td>
         <td class="text-right">
             <button data-ng-click="$ctrl.deleteFood(food)" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-trash"></span> Delete</button>
             <button data-ng-click="$ctrl.setFoodItemForEdit(food)" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-edit"></span> Edit</button>
-            <a ui-sref="food({id: food.Id})" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-search"></span> Details</a>
+            <a ui-sref="food({id: food.id})" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-search"></span> Details</a>
         </td>
     </tr>
 </table>
