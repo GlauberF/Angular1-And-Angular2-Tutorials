@@ -9,15 +9,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var myFirst_component_1 = require('./myFirstcomponent/myFirst.component');
 var AppComponent = (function () {
     function AppComponent() {
     }
     AppComponent = __decorate([
         core_1.Component({
+            moduleId: module.id,
             selector: 'my-app',
-            templateUrl: 'app/app.component.html',
-            directives: [myFirst_component_1.MyFirstComponent]
+            templateUrl: './app.component.html',
+            styleUrls: ['./css/styles.css']
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);

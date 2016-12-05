@@ -1,9 +1,10 @@
 import {Component} from '@angular/core';
-import { MyFirstComponent } from './myFirstcomponent/myFirst.component';
 
 @Component({
+    moduleId: module.id,
     selector: 'my-app',
-    templateUrl: 'app/app.component.html',
-    directives: [MyFirstComponent]
+    templateUrl: './app.component.html',
+    styleUrls: ['./css/styles.css']
 })
+
 export class AppComponent { }
