@@ -9,11 +9,34 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var core_2 = require('@angular/core');
 var HomeComponent = (function () {
     function HomeComponent() {
     }
+    // only called for/if there is an @input variable set by parent.
+    HomeComponent.prototype.ngOnChanges = function (changes) {
+        console.log('ngOnChanges');
+        console.log(changes);
+    };
+    HomeComponent.prototype.ngOnInit = function () { console.log('OnInit'); };
+    // Beware! Called frequently!
+    // Called in every change detection cycle anywhere on the page
+    HomeComponent.prototype.ngDoCheck = function () { console.log('DoCheck'); };
+    HomeComponent.prototype.ngAfterContentInit = function () { console.log('AfterContentInit'); };
+    // Beware! Called frequently!
+    // Called in every change detection cycle anywhere on the page
+    HomeComponent.prototype.ngAfterContentChecked = function () { console.log('AfterContentChecked'); };
+    HomeComponent.prototype.ngAfterViewInit = function () { console.log('AfterViewInit'); };
+    // Beware! Called frequently!
+    // Called in every change detection cycle anywhere on the page
+    HomeComponent.prototype.ngAfterViewChecked = function () { console.log('AfterViewChecked'); };
+    HomeComponent.prototype.ngOnDestroy = function () { console.log('OnDestroy'); };
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', String)
+    ], HomeComponent.prototype, "textForOnChanges", void 0);
     HomeComponent = __decorate([
-        core_1.Component({
+        core_2.Component({
             moduleId: module.id,
             selector: 'home',
             templateUrl: './home.component.html'
