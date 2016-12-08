@@ -14,4 +14,8 @@ export class AppComponent {
     ];
 
     public showItem: boolean = true;
+
+    public toggleShowItem() {
+        this.showItem = !this.showItem;
+    }
 }
