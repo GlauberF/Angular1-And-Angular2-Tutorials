@@ -10,9 +10,10 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
 
     public result: number;
+    private calculatorService: CalculatorService;
 
-    constructor(private calculatorService: CalculatorService) {
-
+    constructor() {
+        this.calculatorService = new CalculatorService();
     }
 
     ngOnInit() {

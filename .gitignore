@@ -2,3 +2,4 @@
 **/node_modules/*
 Angular2-Tutorial/*/*/app/*.js
 Angular2-Tutorial/*/*/app/*.js.map
+Angular2-Tutorial/**/npm-debug.log*
