@@ -25,6 +25,8 @@
       '@angular/forms': 'npm:@angular/forms/bundles/forms.umd.js',
       '@angular/upgrade': 'npm:@angular/upgrade/bundles/upgrade.umd.js',
       '@angular/upgrade/static': 'npm:@angular/upgrade/bundles/upgrade-static.umd.js',
+      'bootstrap': 'npm:bootstrap/dist/js/bootstrap.js',
+      'jquery': 'npm:jquery/dist/jquery.js',
 
       // other libraries
       'rxjs':                      'npm:rxjs',
