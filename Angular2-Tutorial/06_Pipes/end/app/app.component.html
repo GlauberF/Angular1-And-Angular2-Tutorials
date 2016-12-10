@@ -1,0 +1,29 @@
+<navigation></navigation>
+
+
+<div class="container">
+
+    <div class="starter-template">
+        <h1>Pipes</h1>
+        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones
+            HTML document.</p>
+
+        <p>{{value | myUppercase}}</p>
+
+    </div>
+
+    <form>
+        <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-addon"><i class="glyphicon glyphicon-search"></i></div>
+                <input type="text" class="form-control" name="searchString" placeholder="Type to search..." [(ngModel)]="searchString">
+            </div>
+        </div>
+    </form>
+
+    <ul>
+        <li *ngFor="let item of items | filter : 'name' : searchString">{{item.name}}</li>
+    </ul>
+
+</div>
+<!-- /.container -->
