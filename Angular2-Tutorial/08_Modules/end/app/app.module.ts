@@ -1,5 +1,8 @@
-import { IsNumberValidator } from './validators/isNumber.validator';
-import { IsInRangeValidator } from './validators/isInRange.validator';
+import { LazyComponent } from './components/lazy/lazy.component';
+import { HomeComponent } from './components/home/home.component';
+import { AppRoutes } from './app.routes';
+import { SharedModule } from './modules/shared.module';
+import { RouterModule } from '@angular/router';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -9,14 +12,15 @@ import { AppComponent } from './app.component';
 @NgModule({
     imports: [
         BrowserModule,
-        FormsModule
+        FormsModule,
+        SharedModule,
+        RouterModule.forRoot(AppRoutes),
     ],
 
     declarations: [
         AppComponent,
-        NavigationComponent,
-        IsNumberValidator,
-        IsInRangeValidator
+        HomeComponent,
+        NavigationComponent
     ],
 
     bootstrap: [
