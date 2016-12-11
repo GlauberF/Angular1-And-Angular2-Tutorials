@@ -1,5 +1,5 @@
-import { FoodItem } from '../../models/foodItem';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
     moduleId: module.id,
@@ -9,15 +9,12 @@ import { Component } from '@angular/core';
 
 
 export class HomeComponent {
-    public currentFood: FoodItem = new FoodItem();
 
-    public AddOrUpdateFoodNoValidation = (): void => {
-        let stringObject = JSON.stringify(this.currentFood);
-        alert(stringObject);
+    constructor(private router: Router) {
+
     }
 
-    public AddOrUpdateFoodWithValidation = (): void => {
-        let stringObject = JSON.stringify(this.currentFood);
-        alert(stringObject);
+    public navigate = (): void => {
+        this.router.navigate(['/products']);
     }
 }

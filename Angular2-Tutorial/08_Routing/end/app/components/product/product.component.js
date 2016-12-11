@@ -8,25 +8,33 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
-var HomeComponent = (function () {
-    function HomeComponent(router) {
-        var _this = this;
+var foodItem_1 = require('./../../models/foodItem');
+var core_1 = require('@angular/core');
+var ProductComponent = (function () {
+    function ProductComponent(router) {
         this.router = router;
-        this.navigate = function () {
-            _this.router.navigate(['/products']);
-        };
+        this.foodItems = [];
+        var foodItemToPush = new foodItem_1.FoodItem();
+        foodItemToPush.calories = 999;
+        foodItemToPush.id = 999;
+        foodItemToPush.created = new Date();
+        foodItemToPush.name = 'Lasagne';
+        this.foodItems.push(foodItemToPush);
     }
-    HomeComponent = __decorate([
+    ProductComponent.prototype.goToDetails = function (id) {
+        this.router.navigate(['/product', id]);
+    };
+    ProductComponent.prototype.ngOnInit = function () { };
+    ProductComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
-            selector: 'home',
-            templateUrl: './home.component.html'
+            selector: 'product',
+            templateUrl: 'product.component.html'
         }), 
         __metadata('design:paramtypes', [router_1.Router])
-    ], HomeComponent);
-    return HomeComponent;
+    ], ProductComponent);
+    return ProductComponent;
 }());
-exports.HomeComponent = HomeComponent;
-//# sourceMappingURL=home.component.js.map
+exports.ProductComponent = ProductComponent;
+//# sourceMappingURL=product.component.js.map

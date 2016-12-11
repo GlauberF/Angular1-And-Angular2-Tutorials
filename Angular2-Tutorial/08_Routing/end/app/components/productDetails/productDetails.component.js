@@ -10,23 +10,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
-var HomeComponent = (function () {
-    function HomeComponent(router) {
-        var _this = this;
-        this.router = router;
-        this.navigate = function () {
-            _this.router.navigate(['/products']);
-        };
+var ProductDetailsComponent = (function () {
+    function ProductDetailsComponent(_route) {
+        this._route = _route;
     }
-    HomeComponent = __decorate([
+    ProductDetailsComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this._route.params.forEach(function (params) {
+            var id = +params['id'];
+            _this.id = id;
+        });
+    };
+    ProductDetailsComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
-            selector: 'home',
-            templateUrl: './home.component.html'
+            selector: 'productDetails',
+            templateUrl: 'productDetails.component.html'
         }), 
-        __metadata('design:paramtypes', [router_1.Router])
-    ], HomeComponent);
-    return HomeComponent;
+        __metadata('design:paramtypes', [router_1.ActivatedRoute])
+    ], ProductDetailsComponent);
+    return ProductDetailsComponent;
 }());
-exports.HomeComponent = HomeComponent;
-//# sourceMappingURL=home.component.js.map
+exports.ProductDetailsComponent = ProductDetailsComponent;
+//# sourceMappingURL=productDetails.component.js.map

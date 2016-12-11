@@ -1,4 +1,3 @@
-import { FoodItem } from './models/foodItem';
 import { Component } from '@angular/core';
 
 @Component({
@@ -8,15 +7,4 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent {
-    public currentFood: FoodItem = new FoodItem();
-
-    public AddOrUpdateFoodNoValidation = (): void => {
-        let stringObject = JSON.stringify(this.currentFood);
-        alert(stringObject);
-    }
-
-     public AddOrUpdateFoodWithValidation = (): void => {
-        let stringObject = JSON.stringify(this.currentFood);
-        alert(stringObject);
-    }
 }

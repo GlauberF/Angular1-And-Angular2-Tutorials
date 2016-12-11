@@ -10,23 +10,27 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
-var HomeComponent = (function () {
-    function HomeComponent(router) {
-        var _this = this;
+var WithChildrenRecipeComponent = (function () {
+    function WithChildrenRecipeComponent(router, route) {
         this.router = router;
-        this.navigate = function () {
-            _this.router.navigate(['/products']);
-        };
+        this.route = route;
     }
-    HomeComponent = __decorate([
+    WithChildrenRecipeComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        // Get parent ActivatedRoute of	this route.	
+        this.route.parent.params.forEach(function (params) {
+            _this.parentRouteId = +params['id'];
+        });
+    };
+    WithChildrenRecipeComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
-            selector: 'home',
-            templateUrl: './home.component.html'
+            selector: 'withChildrenRecipe',
+            templateUrl: 'withChildrenRecipe.component.html'
         }), 
-        __metadata('design:paramtypes', [router_1.Router])
-    ], HomeComponent);
-    return HomeComponent;
+        __metadata('design:paramtypes', [router_1.Router, router_1.ActivatedRoute])
+    ], WithChildrenRecipeComponent);
+    return WithChildrenRecipeComponent;
 }());
-exports.HomeComponent = HomeComponent;
-//# sourceMappingURL=home.component.js.map
+exports.WithChildrenRecipeComponent = WithChildrenRecipeComponent;
+//# sourceMappingURL=withChildrenRecipe.component.js.map
