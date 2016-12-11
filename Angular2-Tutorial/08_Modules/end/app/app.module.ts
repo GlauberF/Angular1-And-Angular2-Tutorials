@@ -1,4 +1,3 @@
-import { LazyComponent } from './components/lazy/lazy.component';
 import { HomeComponent } from './components/home/home.component';
 import { AppRoutes } from './app.routes';
 import { SharedModule } from './modules/shared.module';
