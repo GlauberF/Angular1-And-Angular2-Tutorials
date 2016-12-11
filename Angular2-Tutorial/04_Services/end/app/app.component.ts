@@ -25,7 +25,7 @@ export class AppComponent implements OnInit {
     ngOnInit() {
         this.result = this.calculatorService.add(1, 3);
         this.itemDataService.GetAllFood().subscribe((result) => {
-            this.items = result;
+            this.items = result.results;
         });
     }
 }

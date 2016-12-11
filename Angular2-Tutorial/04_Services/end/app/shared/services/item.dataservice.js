@@ -44,7 +44,8 @@ var FoodDataService = (function () {
             options.headers.append('Content-Type', 'application/json');
             return options;
         };
-        this.actionUrl = 'http://foodapi4demo.azurewebsites.net/api/food/';
+        this.actionUrl = 'https://randomuser.me/api/';
+        // this.actionUrl = 'http://foodapi4demo.azurewebsites.net/api/food/';
     }
     FoodDataService.prototype.handleError = function (error) {
         console.error(error);
