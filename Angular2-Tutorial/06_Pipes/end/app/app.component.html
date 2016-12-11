@@ -8,7 +8,15 @@
         <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones
             HTML document.</p>
 
-        <p>{{value | myUppercase}}</p>
+        <h1>MyUppercase Pipe</h1>
+        <p class="lead">{{value | myUppercase}}</p>
+
+        <h1>Date Pipe</h1>
+        <p class="lead">{{date}}</p>
+        <p class="lead">{{date | date }}</p>
+        <p class="lead">{{date | date:'dd.MM.yyyy' }}</p>
+        <p class="lead">{{date | date:'shortDate'}}</p>
+        <p class="lead">{{date | date:'fullDate' | uppercase}}</p>
 
     </div>
 

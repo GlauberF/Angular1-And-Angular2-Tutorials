@@ -24,4 +24,6 @@ export class AppComponent {
     ];
 
     public searchString = '';
+
+    public date = new Date();
 }
