@@ -4,6 +4,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 
+const randomFactory = () => { return Math.random(); };
+
 @NgModule({
     imports: [
         BrowserModule
@@ -15,7 +17,10 @@ import { AppComponent } from './app.component';
     ],
 
     providers: [
-        CalculatorService
+        // CalculatorService,
+        { provide: CalculatorService, useClass: CalculatorService },
+        { provide: 'RandomWithFactory', useFactory: randomFactory },
+        { provide: 'RandomWithValue', useValue: Math.random() }
     ],
 
     bootstrap: [

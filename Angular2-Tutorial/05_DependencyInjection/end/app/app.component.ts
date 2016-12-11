@@ -1,5 +1,5 @@
 import { CalculatorService } from './shared/services/calculator.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 
 @Component({
     moduleId: module.id,
@@ -10,10 +10,16 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
 
     public result: number;
-    private calculatorService: CalculatorService;
+    public randomWithFactoryValue: number;
+    public randomWithValue: number;
 
-    constructor() {
-        this.calculatorService = new CalculatorService();
+    constructor(private calculatorService: CalculatorService,
+        @Inject('RandomWithFactory') randomWithFactory: number,
+        @Inject('RandomWithValue') randomWithValue: number) {
+
+        this.randomWithFactoryValue = randomWithFactory;
+        this.randomWithValue = randomWithValue;
+
     }
 
     ngOnInit() {
