@@ -1,3 +1,4 @@
+import { FoodDataService } from './shared/services/item.dataservice';
 import { CalculatorService } from './shared/services/calculator.service';
 import { Component, OnInit, Inject } from '@angular/core';
 
@@ -15,7 +16,8 @@ export class AppComponent implements OnInit {
 
     constructor(private calculatorService: CalculatorService,
         @Inject('RandomWithFactory') randomWithFactory: number,
-        @Inject('RandomWithValue') randomWithValue: number) {
+        @Inject('RandomWithValue') randomWithValue: number,
+        private dataService: FoodDataService) {
 
         this.randomWithFactoryValue = randomWithFactory;
         this.randomWithValue = randomWithValue;
