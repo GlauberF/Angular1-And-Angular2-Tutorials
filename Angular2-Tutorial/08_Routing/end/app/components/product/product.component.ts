@@ -22,7 +22,7 @@ export class ProductComponent implements OnInit {
         this.foodItems.push(foodItemToPush);
     }
 
-    public goToDetails(id) {
+    public goToDetails(id: number) {
         this.router.navigate(['/product', id]);
     }
 
