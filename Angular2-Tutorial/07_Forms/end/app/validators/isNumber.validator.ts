@@ -13,16 +13,13 @@ export class IsNumberValidator implements Validator {
     validate(c: FormControl): { [key: string]: any } {
 
         if (isNaN(+c.value)) {
-            // console.log(c.value + " is not a number");
             return {
-                isNumber:
-                {
-                    valid: false
+                isNumber: {
+                    message: 'This could be a validation message'
                 }
             };
         }
 
-        // console.log(c.value + " is a number");
         return null;
     }
 }

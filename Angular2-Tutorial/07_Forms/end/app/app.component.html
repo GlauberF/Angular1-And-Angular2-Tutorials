@@ -39,14 +39,14 @@
         <div class="form-group">
             <label for="calories">Calories</label>
             <input type="text" class="form-control" id="calories" placeholder="Calories" [(ngModel)]="currentFood.calories" required
-                isNumber isInRange name="calories" #calories="ngModel">
+                isNumber isInRange minValue="0" maxValue="" name="calories" #calories="ngModel">
 
             <div *ngIf="calories.errors?.required && (calories?.dirty && !f.submitted)" class="alert alert-danger">
                 *
             </div>
 
             <div *ngIf="calories.errors?.isNumber && (calories?.dirty && !f.submitted)" class="alert alert-danger">
-                Please enter a number
+                Please enter a number <br/> {{calories.errors?.isNumber.message}}
             </div>
 
             <div *ngIf="calories?.errors?.isInRange && (calories?.dirty && !f.submitted)" class="alert alert-danger">

@@ -15,14 +15,12 @@ var IsNumberValidator = (function () {
     }
     IsNumberValidator.prototype.validate = function (c) {
         if (isNaN(+c.value)) {
-            // console.log(c.value + " is not a number");
             return {
                 isNumber: {
-                    valid: false
+                    message: 'This could be a validation message'
                 }
             };
         }
-        // console.log(c.value + " is a number");
         return null;
     };
     IsNumberValidator = __decorate([
